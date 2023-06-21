@@ -1,24 +1,5 @@
-// ----- STILI GENRALI -----
-* {
-  letter-spacing: 1px !important;
-  vertical-align: baseline !important;
-  line-height: 1 !important;
-  /* la imposta all'altezza del carattere senza spazi extra */
-}
-
-// eliminare bordi al clic, form e imput
-:focus {
-  box-shadow: none;
-  border-color: $company-day;
-}
-
-// per dare l'hover ai bg dei colori company
-.btn:hover {
-  filter: brightness(70%);
-}
-
 // ----- COLORI SITO -----
-$company-day: rgba(242, 208, 167, 1);
+$company-day: rgba(255, 250, 235, 1);
 $company-100: rgba(185, 191, 3, 1);
 $company-200: rgba(135, 140, 2, 1);
 $company-300: rgba(89, 83, 1, 1);
@@ -43,41 +24,105 @@ $gray-800: #343a40;
 $dark: #212529;
 $black: #000;
 
+// ----- STILI GENRALI -----
+* {
+  letter-spacing: 1px !important;
+  color: $company-300 !important;
+}
+
+h1 {
+  line-height: 0;
+  margin: 0;
+}
+
+a {
+  font-weight: 700 !important;
+}
+
+// eliminare bordi al clic, form e imput
+*:focus {
+  box-shadow: none !important;
+  border-color: $company-100 !important;
+}
+
+*:active {
+  background-color: $company-day !important;
+  outline: 0 !important;
+}
+
+.dropdown-item:hover {
+  background-color: $company-day !important;
+}
+
+// per dare l'hover ai bg dei colori company
+.btn.bg-day:hover,
+.btn.bg-100:hover,
+.btn.bg-200:hover,
+.btn.bg-300:hover,
+.btn.bg-night:hover {
+  filter: brightness(80%) !important;
+}
+
+.border-day {
+  border-color: $company-day !important;
+}
+
+.border-100 {
+  border-color: $company-100 !important;
+}
+
+.border-200 {
+  border-color: $company-200 !important;
+}
+
+.border-300 {
+  border-color: $company-300 !important;
+}
+
+.border-night {
+  border-color: $company-night !important;
+}
+
+.active,
+.active i {
+  color: $company-100 !important;
+}
+
 // ----- COLORI DI SFONDO -----
 .bg-day {
-  background: $company-day;
+  background: $company-day !important;
 }
 
 .bg-100 {
-  background: $company-100;
+  background: $company-100 !important;
 }
 
 .bg-200 {
-  background: $company-200;
+  background: $company-200 !important;
 }
 
 .bg-300 {
-  background: $company-300;
+  background: $company-300 !important;
 }
 
 .bg-night {
-  background: $company-night;
+  background: $company-night !important;
 }
 
 
 // linea di sfondo centrale per titoli
 .bg-line {
-  background: linear-gradient(0deg, transparent calc(60% - 1px), $company-100 calc(60% - 1px), $company-100 calc(60% + 1px), transparent calc(60% + 1px));
+  background: linear-gradient(0deg, transparent calc(50% - 1px), $company-100 calc(50% - 1px), $company-100 calc(50% + 1px), transparent calc(50% + 1px));
 }
 
 // per creare texture
 .bg-wallpaper {
   background: linear-gradient(45deg,
-      $company-dark 25%,
-      $company-dark 25%,
+      $company-night 25%,
+      $company-night 25%,
       $black 50%,
-      $company-dark 50%,
-      $company-dark 75%,
+      $company-night 50%,
+      $company-night 75%,
       $black 75%,
       $black);
   background-size: 50px 50px;
@@ -85,23 +130,23 @@ $black: #000;
 
 // ----- GESTIONE TESTO -----
 .text-day {
-  color: $company-day;
+  color: $company-day !important;
 }
 
 .text-100 {
-  color: $company-100;
+  color: $company-100 !important;
 }
 
 .text-200 {
-  color: $company-200;
+  color: $company-200 !important;
 }
 
 .text-300 {
-  color: $company-300;
+  color: $company-300 !important;
 }
 
 .text-night {
-  color: $company-night;
+  color: $company-night !important;
 }
 
 // testo grande con grandezza minima (20vw) e massima (10rem)
@@ -118,12 +163,12 @@ $black: #000;
 }
 
 .truncate-three {
-  @extend .truncate;
+  @extend .truncate-one;
   -webkit-line-clamp: 3;
 }
 
 .truncate-six {
-  @extend .truncate;
+  @extend .truncate-one;
   -webkit-line-clamp: 6;
 }
 

@@ -1,1 +1,42 @@
-<p>header works!</p>
+<header class="navbar navbar-expand-md bg-day container-fluid px-4 px-lg-5 pb-0 pt-3 shadow">
+  <!-- logo -->
+  <h1 class="pe-3 pe-lg-5">
+    <a routerLink="/"><img src="./assets/img/future_forest_logo.svg" alt="logo esteso future forest" height="55.5px"></a>
+  </h1>
+
+
+  <button class="navbar-toggler mb-3 border-0 px-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- icona menu hamburger -->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- contiene navbar e serchbar -->
+  <nav class="collapse navbar-collapse my-3 mt-md-0" id="navbarSupportedContent">
+    <ul class="navbar-nav my-2 my-md-0 text-center me-auto">
+      <li class="nav-item pe-3">
+        <a class="nav-link text-nowrap" routerLink="/plants" routerLinkActive="active"><i class="fa-brands fa-envira"></i> Plants</a>
+      </li>
+      <hr class="d-md-none border-1 border-300 my-1">
+      <li class="nav-item pe-3">
+        <a class="nav-link text-nowrap" routerLink="/xeriscaping" routerLinkActive="active"><i class="fa-solid fa-droplet-slash"></i> Xeriscaping</a>
+      </li>
+      <hr class="d-md-none border-1 border-300 my-1">
+      <li class="nav-item dropdown me-md-3">
+        <a class="nav-link text-nowrap dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-earth-americas"></i> Home
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/" fragment="mission">Our Mission</a></li>
+          <li><a class="dropdown-item" routerLink="/" fragment="plants">Our plants</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" routerLink="/" fragment="who">Who we are</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <app-searchbar></app-searchbar>
+  </nav>
+</header>
