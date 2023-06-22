@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 // area componenti
 import { AppComponent } from './app.component';
@@ -51,7 +52,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    // https://angular.io/api/router/ExtraOptions opzioni extra router module
+    HttpClientModule,
     RouterModule.forRoot(
       routes, {
         enableTracing: false,

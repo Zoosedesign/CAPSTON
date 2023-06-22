@@ -1,3 +1,27 @@
-<main class="vh-100 bg-200">
-  <h3 class="text-white">PLANTS</h3>
+<main id="plant_page">
+
+  <section class="container-fluid d-flex flex-row flex-wrap py-2 px-0 px-sm-4">
+    <!-- elemnti card plant che si ripeteranno -->
+    <div class="col-6 col-lg-4 col-xxl-3 p-2 p-sm-4" *ngFor="let plant of plants">
+      <!-- card -->
+      <article class="card border-0 bg-day rounded-top-4 rounded-bottom-5 rounded-bl-0 shadow">
+        <img src="{{plant.default_image.small_url}}" class="rounded-top-4" alt="{{plant.common_name}} image">
+        <div class="card-body">
+          <h5 class="card-title truncate-one">{{plant.scientific_name}}</h5>
+          <small class="card-text text-truncate">{{plant.common_name}}</small>
+        </div>
+        <figure class="d-flex justify-content-between bg-200 m-3 p-3 rounded-pill shadow">
+          <i class="fa-solid fa-sun text-day"></i>
+          <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
+          <i class="fa-solid fa-droplet-slash text-day"></i>
+          <i class="fa-solid fa-hand-holding-droplet text-day"></i>
+        </figure>
+      </article>
+      <!-- button product details -->
+        <a href="#" class="btn bg-100 rounded-3 rounded-top-0 px-3 py-2 shadow">
+          <span class="d-none d-sm-inline">More info </span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+  </section>
 </main>

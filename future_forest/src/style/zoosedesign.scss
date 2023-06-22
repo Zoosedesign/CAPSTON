@@ -40,14 +40,18 @@ a {
 }
 
 // eliminare bordi al clic, form e imput
-*:focus {
+input:focus {
   box-shadow: none !important;
   border-color: $company-100 !important;
 }
 
-*:active {
+input:active {
   background-color: $company-day !important;
   outline: 0 !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .dropdown-item:hover {
@@ -60,9 +64,10 @@ a {
 .btn.bg-200:hover,
 .btn.bg-300:hover,
 .btn.bg-night:hover {
-  filter: brightness(80%) !important;
+  filter: brightness(75%) !important;
 }
 
+// ----- BORDI -----
 .border-day {
   border-color: $company-day !important;
 }
@@ -83,9 +88,20 @@ a {
   border-color: $company-night !important;
 }
 
-.active,
-.active i {
-  color: $company-100 !important;
+.rounded-bl-0 {
+  border-bottom-left-radius: 0 !important;
+}
+
+.rounded-br-0 {
+  border-bottom-right-radius: 0 !important;
+}
+
+.rounded-tl-0 {
+  border-top-left-radius: 0 !important;
+}
+
+.rounded-tr-0 {
+  border-top-right-radius: 0 !important;
 }
 
 // ----- COLORI DI SFONDO -----
@@ -116,15 +132,15 @@ a {
 }
 
 // per creare texture
-.bg-wallpaper {
+.bg-pattern {
   background: linear-gradient(45deg,
-      $company-night 25%,
-      $company-night 25%,
-      $black 50%,
-      $company-night 50%,
-      $company-night 75%,
-      $black 75%,
-      $black);
+      $company-100 25%,
+      $company-100 25%,
+      $company-300 50%,
+      $company-100 50%,
+      $company-100 75%,
+      $company-300 75%,
+      $company-300);
   background-size: 50px 50px;
 }
 
@@ -133,6 +149,8 @@ a {
   color: $company-day !important;
 }
 
+.active,
+.active i,
 .text-100 {
   color: $company-100 !important;
 }
@@ -170,6 +188,12 @@ a {
 .truncate-six {
   @extend .truncate-one;
   -webkit-line-clamp: 6;
+}
+
+@media screen and (max-width: 576px) {
+  .truncate-one {
+    -webkit-line-clamp: 2;
+  }
 }
 
 // ----- GESTIONE IMMAGINE -----
