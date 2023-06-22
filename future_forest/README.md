@@ -1,8 +1,14 @@
-# FutureForest
-
+# FutureForest --------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 
-# Scroll Features
+
+# API Perenual --------------------
+300 API Request / Day
+[DOCUMENTATION:] https://perenual.com/docs/api
+[ENDPOINT:] https://perenual.com/api/species-list?page=1&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun
+
+
+# Scroll Features --------------------
 1.[src/app/services]
 creazione delle 3 direttive necessarie all'utilizzo dello scroll
 

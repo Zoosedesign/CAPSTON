@@ -9,7 +9,7 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./plants.component.scss']
 })
 export class PlantsComponent implements OnInit {
-  url: string = "https://perenual.com/api/species-list?page=2&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun"
+  url: string = "https://perenual.com/api/species-list?page=1&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun"
   plants!: Plants[];
 
   constructor(private PlantsSrv: PlantsService) { }
