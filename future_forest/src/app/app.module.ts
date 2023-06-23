@@ -19,6 +19,7 @@ import { OurPlantsComponent } from './components/our-plants/our-plants.component
 import { ScrollAnchorDirective } from './services/scroll-anchor.directive';
 import { ScrollManagerDirective } from './services/scroll-manager.directive';
 import { ScrollSectionDirective } from './services/scroll-section.directive';
+import { BeforeAfterComponent } from './components/before-after/before-after.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
     OurPlantsComponent,
     ScrollAnchorDirective,
     ScrollManagerDirective,
-    ScrollSectionDirective
+    ScrollSectionDirective,
+    BeforeAfterComponent
   ],
   imports: [
     BrowserModule,
