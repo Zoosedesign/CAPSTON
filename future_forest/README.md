@@ -32,9 +32,13 @@ I link saranno quindi:
 # IMAGE PLANT ERROR --------------------
 Avendo riscontrato problemi, errori e mancanze di immagini all'interno di alcune piante ho implementato la logica con un operatorio ternario per il recupero dell'immagine:
 
- <img src="{{(plant.default_image) ? plant.default_image.small_url || plant.default_image.original_url : '/assets/img/img_placeholder.svg'}}" alt="{{plant.common_name}} image">
+ <img src="{{(plant.default_image && plant.default_image.original_url !== 'https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg') ? plant.default_image.small_url || plant.default_image.original_url  : '/assets/img/img_placeholder.svg'}}" alt="{{plant.common_name}} image">
 
- Prima di tutto controllo se l'array [plant.defaul_image] esiste dopodichè gli dico di inserire [plant.default_image.small_url], qual'ora non ci fosse optare per la versione [original_url], solo nel caso [plant.default_image] risulti vuoto o null inserisci l'immagine riempitiva creata.
+ 1.Prima di tutto controllo se l'array [plant.defaul_image] esiste e se [plant.default_image.small_url] sia diversa da un'immagine di prova che hanno buttato così dentro a caso quelli dell'API. 
+
+ 2.Se il punto uno è true, gli dico di inserire [plant.default_image.small_url], qualora non ci fosse optare per la versione [original_url].
+ 
+ 3.Se dovesse risultare false, nel caso [plant.default_image] risulti vuoto o null o ci sia solo l'immagine farlocca, inserisco il placeholder per far capire che l'immagine è ancora da caricare.
 
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17

@@ -8,7 +8,7 @@
       <article class="card border-0 bg-day rounded-top-4 rounded-bottom-5 rounded-bl-0 shadow">
         <!-- inserisco l'immagine e gestisco anche l'errore nel caso non ci fosse -->
         <img
-          src="{{(plant.default_image) ? plant.default_image.small_url || plant.default_image.original_url  : '/assets/img/img_placeholder.svg'}}"
+          src="{{(plant.default_image && plant.default_image.original_url !== 'https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg') ? plant.default_image.small_url || plant.default_image.original_url  : '/assets/img/img_placeholder.svg'}}"
           class="rounded-top-4 fit-square" alt="{{plant.common_name}} image">
 
         <div class="card-body">
@@ -31,10 +31,9 @@
   </section>
 
   <!-------- PAGE NAVIGATION -------->
-  <div id="navbarPage"
-    class="container-fluid bg-day d-flex justify-content-evenly align-items-center py-2 px-2 px-sm-5">
+  <div id="navbarPage" class="container d-flex justify-content-evenly align-items-center py-2 px-2 px-sm-5">
     <!-- pagina precedente -->
-    <button class="btn"><a [ngClass]="{'invisible': this.page == 1}" routerLink="/plants/page/{{this.page - 1}}"
+    <button class="btn ps-md-5 ms-lg-5"><a [ngClass]="{'invisible': this.page == 1}" routerLink="/plants/page/{{this.page - 1}}"
         fragment="header" class="p-0" (click)="pageLess()"><i class="fa-solid fa-chevron-left fs-3"></i></a></button>
 
     <!-- prima pagina -->
@@ -60,7 +59,7 @@
     <a [ngClass]="{'d-none': this.page <= 11}">&nbsp;</a>
 
     <!-- pagina successiva -->
-    <button class="btn"><a [ngClass]="{'invisible': this.page == 17}" routerLink="/plants/page/{{this.page + 1}}"
+    <button class="btn pe-md-5 me-lg-5"><a [ngClass]="{'invisible': this.page == 17}" routerLink="/plants/page/{{this.page + 1}}"
         fragment="header" class="p-0" (click)="pagePlus()"><i class="fa-solid fa-chevron-right fs-3"></i></a></button>
   </div>
 </main>
