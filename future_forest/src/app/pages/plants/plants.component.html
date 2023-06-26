@@ -1,11 +1,13 @@
-<main id="plans">
+<main id="plants">
 
   <section class="container-fluid d-flex flex-row flex-wrap py-2 px-0 px-sm-4">
     <!-- elemnti card plant che si ripeteranno -->
     <div class="col-6 col-lg-4 col-xxl-3 p-2 p-sm-4" *ngFor="let plant of plants">
       <!------- CARD ------->
       <article class="card border-0 bg-day rounded-top-4 rounded-bottom-5 rounded-bl-0 shadow">
-        <img src="{{plant.default_image.small_url}}" class="rounded-top-4" alt="{{plant.common_name}} image">
+        <!-- inserisco l'immagine e gestisco anche l'errore nel caso non ci fosse -->
+        <img src="{{(plant.default_image) ? plant.default_image.small_url || plant.default_image.original_url  : '/assets/img/img_placeholder.svg'}}" class="rounded-top-4 fit-square" alt="{{plant.common_name}} image">
+
         <div class="card-body">
           <h5 class="card-title truncate-one">{{plant.scientific_name}}</h5>
           <small class="card-text truncate-one">{{plant.common_name}}</small>
@@ -19,9 +21,27 @@
       </article>
       <!-- button product details -->
         <a href="#" class="btn bg-300 rounded-3 rounded-top-0 px-3 py-2 shadow">
-          <span class="d-none d-sm-inline text-day">More info </span><i class="fa-solid fa-arrow-up-right-from-square text-day"></i>
+          <span class="d-none d-sm-inline text-day">more info </span><i class="fa-solid fa-arrow-up-right-from-square text-day"></i>
         </a>
     </div>
 
   </section>
+
+  <!-------- NAVIGAZIONE PAGINE -------->
+  <div class="container-fluid bg-day d-flex justify-content-evenly align-items-center py-2 px-2 px-sm-5">
+    <!-- pagina precedente -->
+    <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.page - 1}}" fragment="header" class="btn p-0" (click)="pageLess()"><i class="fa-solid fa-chevron-left fs-3"></i></a>
+
+    <!-- ritornare a metà delle pagine visitate -->
+    <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.halfPage}}" fragment="header" class="btn p-0" (click)="pageChoice(this.halfPage)">{{this.halfPage}}</a>
+
+    <!-- pagina attuale -->
+    <b class="m-0 fs-3">{{this.page}}</b>
+
+    <!-- va cinque pagine avanti -->
+    <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.page + 5}}" fragment="header" class="btn p-0" (click)="pageChoice(this.page + 5)">{{this.page + 5}}</a>
+
+    <!-- pagina successiva -->
+    <a [ngClass]="{'visible': this.page <= 48, 'invisible': this.page == 48}" routerLink="/plants/page/{{this.page + 1}}" fragment="header" class="btn p-0" (click)="pagePlus()"><i class="fa-solid fa-chevron-right fs-3"></i></a>
+  </div>
 </main>

@@ -28,6 +28,11 @@ const routes: Routes = [
   },
   {
     path: 'plants',
+    redirectTo: 'plants/page/1',
+    pathMatch: 'full'
+  },
+  {
+    path: 'plants/page/:pageNumber',
     component: PlantsComponent
   },
   {

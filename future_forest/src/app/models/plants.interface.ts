@@ -7,6 +7,6 @@ export interface Plants {
     sunlight: string[], //full_shade, part_shade, sun-part_shade, full_sun
     default_image: {
       original_url: string,
-      small_url: string
+      small_url?: string
     }
 }

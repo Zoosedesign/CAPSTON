@@ -9,22 +9,56 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./plants.component.scss']
 })
 export class PlantsComponent implements OnInit {
-  page: number = 1
-  url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun`
+  page!: number;
+  halfPage!: number;
   plants!: Plants[];
 
   constructor(private PlantsSrv: PlantsService) { }
 
   ngOnInit(): void {
+    this.fetchData();
+    console.log(this.page, this.halfPage);
+  }
+
+  fetchData(): void {
+    //verifico l'ultima pagina navigata
+    const actualPage: string | null = sessionStorage.getItem('actual_page');
+    if (actualPage) {
+      this.page = Number(actualPage);
+      this.halfPage = Math.ceil(Number(actualPage) / 2);
+    } else {
+      this.page = 1;
+      this.halfPage = 0;
+    }
+
     //faccio la get solo se non sono già presenti nel session storage i dati della pagina richiesta
-    let sessionData: string | null = sessionStorage.getItem(`page_${this.page}`);
+    const sessionData: string | null = sessionStorage.getItem(`page_${this.page}`);
+    let url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun`
     if (sessionData) {
       this.plants = JSON.parse(sessionData);
     } else {
-      this.PlantsSrv.getPlant<Pagination>(this.url).subscribe(page => {
+      this.PlantsSrv.getPlant<Pagination>(url).subscribe(page => {
         this.plants = page.data;
         sessionStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
       });
     }
+  }
+
+  pagePlus(): void {
+    this.page++;
+    sessionStorage.setItem('actual_page', JSON.stringify(this.page));
+    this.fetchData();
+  }
+
+  pageLess(): void {
+    this.page--;
+    sessionStorage.setItem(`actual_page`, JSON.stringify(this.page));
+    this.fetchData();
+  }
+
+  pageChoice(p: number): void {
+    this.page = p
+    sessionStorage.setItem('actual_page', JSON.stringify(this.page));
+    this.fetchData();
   }
 }

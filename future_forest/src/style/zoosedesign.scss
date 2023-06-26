@@ -195,7 +195,17 @@ input:not([type="range"]):active {
 
 // ----- GESTIONE IMMAGINE -----
 // per rendere uguali dimensioni immagini card
-.fit {
+.fit-square {
+  aspect-ratio: 1/1;
+  object-fit: fit;
+}
+
+.fit-v {
   aspect-ratio: 1/1.5;
+  object-fit: fit;
+}
+
+.fit-h {
+  aspect-ratio: 1.5/1;
   object-fit: fit;
 }
