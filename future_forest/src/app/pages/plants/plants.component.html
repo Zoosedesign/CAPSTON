@@ -32,14 +32,23 @@
     <!-- pagina precedente -->
     <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.page - 1}}" fragment="header" class="btn p-0" (click)="pageLess()"><i class="fa-solid fa-chevron-left fs-3"></i></a>
 
+    <!-- prima pagina -->
+    <a [ngClass]="{'visible': this.page >= 3, 'invisible': this.page < 3}" routerLink="/plants/page/1" fragment="header" class="btn p-0" (click)="pageChoice(1)">1</a>
+
     <!-- ritornare a metà delle pagine visitate -->
     <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.halfPage}}" fragment="header" class="btn p-0" (click)="pageChoice(this.halfPage)">{{this.halfPage}}</a>
 
-    <!-- pagina attuale -->
+    <!-- PAGINA ATTUALE -->
     <b class="m-0 fs-3">{{this.page}}</b>
 
-    <!-- va cinque pagine avanti -->
-    <a [ngClass]="{'visible': this.page > 1, 'invisible': this.page == 1}" routerLink="/plants/page/{{this.page + 5}}" fragment="header" class="btn p-0" (click)="pageChoice(this.page + 5)">{{this.page + 5}}</a>
+    <!-- va dieci pagine avanti -->
+    <a [ngClass]="{'d-inline': this.page <= 38, 'd-none': this.page > 38}" routerLink="/plants/page/{{this.page + 10}}" fragment="header" class="btn p-0" (click)="pageChoice(this.page + 10)">{{this.page + 10}}</a>
+
+    <!-- vai 5 pagine avanti -->
+    <a [ngClass]="{'d-inline': this.page > 38, 'd-none': this.page <= 38 || this.page > 43}" routerLink="/plants/page/{{this.page - 5}}" fragment="header" class="btn p-0" (click)="pageChoice(this.page + 5)">{{this.page + 5}}</a>
+
+    <!-- ultima pagina -->
+    <a [ngClass]="{'visible': this.page >= 1, 'invisible': this.page > 43}" routerLink="/plants/page/48" fragment="header" class="btn p-0" (click)="pageChoice(48)">48</a>
 
     <!-- pagina successiva -->
     <a [ngClass]="{'visible': this.page <= 48, 'invisible': this.page == 48}" routerLink="/plants/page/{{this.page + 1}}" fragment="header" class="btn p-0" (click)="pagePlus()"><i class="fa-solid fa-chevron-right fs-3"></i></a>
