@@ -17,7 +17,6 @@ export class PlantsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchData();
-    console.log(this.page, this.halfPage);
   }
 
   fetchData(): void {
@@ -38,12 +37,14 @@ export class PlantsComponent implements OnInit {
       this.plants = JSON.parse(sessionData);
     } else {
       this.PlantsSrv.getPlant<Pagination>(url).subscribe(page => {
-        this.plants = page.data;
+        //aggiungo l'array recuperato + i primi due oggetti per riempimento griglia card xxl
+        this.plants = [...page.data, page.data[0], page.data[1]];
         sessionStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
       });
     }
   }
 
+  //-------- PAGE NAVIGATION --------
   pagePlus(): void {
     this.page++;
     sessionStorage.setItem('actual_page', JSON.stringify(this.page));

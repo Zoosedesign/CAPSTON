@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-before-after',
@@ -11,13 +11,9 @@ import { Component, Input, OnInit } from '@angular/core';
       `,
   styleUrls: ['./before-after.component.scss']
 })
-export class BeforeAfterComponent implements OnInit {
+export class BeforeAfterComponent {
   @Input() beforeImageUrl!: string;
   @Input() afterImageUrl!: string;
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
   moveDivisor() {
     const afterImage = document.getElementById('after') as HTMLElement;

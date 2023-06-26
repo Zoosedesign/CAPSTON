@@ -1,4 +1,12 @@
+@import '/src/style/colors.scss';
+
 #plants .col-6:hover {
   padding: 0.7rem !important;
   transition: all 0.5s;
+}
+
+#navbarPage > a:hover {
+  color: $company-100 !important;
+  transform: scale(1.5);
+  transition: all 0.1s;
 }

@@ -29,10 +29,13 @@ Avendo l'appScrollManager in app.component.html, per resettare lo scroll i link 
 I link saranno quindi:
 <routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
-# IMAGE PLANT ERROR
+# IMAGE PLANT ERROR --------------------
 Avendo riscontrato problemi, errori e mancanze di immagini all'interno di alcune piante ho implementato la logica con un operatorio ternario per il recupero dell'immagine:
 
  <img src="{{(plant.default_image) ? plant.default_image.small_url || plant.default_image.original_url : '/assets/img/img_placeholder.svg'}}" alt="{{plant.common_name}} image">
 
  Prima di tutto controllo se l'array [plant.defaul_image] esiste dopodichè gli dico di inserire [plant.default_image.small_url], qual'ora non ci fosse optare per la versione [original_url], solo nel caso [plant.default_image] risulti vuoto o null inserisci l'immagine riempitiva creata.
+
+# PAGINATION API LIMIT --------------------
+Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17
 
