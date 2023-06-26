@@ -9,14 +9,14 @@
 
 #after {
   background-size: 100vw min(80vh, 90vw);
-  width: 50vw;
+  width: 70vw;
   border-right: 5px solid $company-extra;
   height: min(80vh, 90vw);
 }
 
 #range {
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
   width: 100vw;
 }
 

@@ -1,7 +1,7 @@
-<header class="navbar navbar-expand-md bg-extra container-fluid px-4 px-lg-5 pb-0 pt-3 fixed-top">
+<header id="header" class="navbar navbar-expand-md bg-extra container-fluid px-4 px-lg-5 pb-0 pt-3">
   <!-- logo -->
   <h1 class="pe-3 pe-lg-5">
-    <a routerLink="/" fragment="home"><img src="./assets/img/future_forest_logo.svg" alt="logo esteso future forest"
+    <a routerLink="/" fragment="header"><img src="./assets/img/future_forest_logo.svg" alt="logo esteso future forest"
         height="55.5px"></a>
   </h1>
 
@@ -17,18 +17,18 @@
   <nav class="collapse navbar-collapse my-3 mt-md-0" id="navbarSupportedContent">
     <ul class="navbar-nav my-2 my-md-0 text-center me-auto">
       <li class="nav-item pe-3">
-        <a class="nav-link text-nowrap" routerLink="/plants" fragment="plants" routerLinkActive="active"><i
+        <a class="nav-link text-nowrap" routerLink="/plants" fragment="header" routerLinkActive="active"><i
             class="fa-brands fa-envira"></i> Plants</a>
       </li>
       <hr class="d-md-none border-1 border-300 my-1">
       <li class="nav-item pe-3">
-        <a class="nav-link text-nowrap" routerLink="/xeriscaping" fragment="xeriscaping" routerLinkActive="active"><i
+        <a class="nav-link text-nowrap" routerLink="/xeriscaping" fragment="header" routerLinkActive="active"><i
             class="fa-solid fa-droplet-slash"></i> Xeriscaping</a>
       </li>
       <hr class="d-md-none border-1 border-300 my-1">
       <li class="nav-item dropdown me-md-3" *ngIf="isHomePage; else otherPage">
-        <a class="nav-link text-nowrap dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-earth-americas"></i> Home
+        <a class="nav-link text-nowrap dropdown-toggle text-100" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-earth-americas text-100"></i> Home
         </a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" appScrollAnchor="mission">Our Mission</a></li>
@@ -42,7 +42,7 @@
       <!-- home alternativo -->
       <ng-template #otherPage>
         <li class="nav-item pe-3">
-          <a class="nav-link text-nowrap" routerLink="/" fragment="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i
+          <a class="nav-link text-nowrap" routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i
               class="fa-solid fa-earth-americas"></i> Home</a>
         </li>
       </ng-template>

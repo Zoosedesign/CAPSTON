@@ -24,7 +24,7 @@ mettiamo le sezioni in cui punterano i link di area, dei sostituti ai classici a
 5.[src/app/shared/header/header.component.html]
 inserimento degli [appScrollAnchor="mission"] che permettono nella pagina attualmente visualizzata, di permettere lo scroll verso <appScrollSection="mission">, in questo caso.
 
-Avendo l'appScrollManager in app.component.html, per resettare lo scroll i link dovranno avere in aggiunta il campo [fragment=""], in modo che carichi la pagina all'inizio del main, dove metteremo un id classico specifico.
+Avendo l'appScrollManager in app.component.html, per resettare lo scroll i link dovranno avere in aggiunta il campo [fragment=""], in modo che carichi la pagina all'inizio del body, l'header avrà quindi un id classico specifico.
 
 I link saranno quindi:
-<routerLink="/" fragment="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+<routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">

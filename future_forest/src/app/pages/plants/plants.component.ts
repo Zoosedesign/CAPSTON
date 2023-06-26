@@ -9,14 +9,22 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./plants.component.scss']
 })
 export class PlantsComponent implements OnInit {
-  url: string = "https://perenual.com/api/species-list?page=1&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun"
+  page: number = 1
+  url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun`
   plants!: Plants[];
 
   constructor(private PlantsSrv: PlantsService) { }
 
   ngOnInit(): void {
-    this.PlantsSrv.getPlant<Pagination>(this.url).subscribe(page => {
-      this.plants = page.data;
-    });
+    //faccio la get solo se non sono già presenti nel session storage i dati della pagina richiesta
+    let sessionData: string | null = sessionStorage.getItem(`page_${this.page}`);
+    if (sessionData) {
+      this.plants = JSON.parse(sessionData);
+    } else {
+      this.PlantsSrv.getPlant<Pagination>(this.url).subscribe(page => {
+        this.plants = page.data;
+        sessionStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
+      });
+    }
   }
 }

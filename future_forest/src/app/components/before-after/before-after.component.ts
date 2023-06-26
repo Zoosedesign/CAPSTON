@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   template: `
     <figure id="before" class="mb-0" [style.backgroundImage]="'url(' + beforeImageUrl + ')'" >
       <div id="after" [style.backgroundImage]="'url(' + afterImageUrl + ')'" ></div>
-      <input type="range" min="1" max="99" value="50" id="range" (input)="moveDivisor()">
+      <input type="range" min="0" max="100" value="70" id="range" (input)="moveDivisor()">
     </figure>
 
       `,
