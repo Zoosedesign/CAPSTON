@@ -30,12 +30,20 @@ input:not([type="range"]):active {
   outline: 0 !important;
 }
 
+.btn:active {
+  border: 0 !important;
+}
+
 .navbar-toggler:focus {
   box-shadow: none;
 }
 
 .dropdown-item:hover {
   background-color: $company-day !important;
+}
+
+.z-n2 {
+  z-index: -2 !important;
 }
 
 // per dare l'hover ai bg dei colori company
@@ -73,19 +81,19 @@ input:not([type="range"]):active {
   border-color: $company-night !important;
 }
 
-.rounded-bl-0 {
+.rounded-bs-0 {
   border-bottom-left-radius: 0 !important;
 }
 
-.rounded-br-0 {
+.rounded-be-0 {
   border-bottom-right-radius: 0 !important;
 }
 
-.rounded-tl-0 {
+.rounded-ts-0 {
   border-top-left-radius: 0 !important;
 }
 
-.rounded-tr-0 {
+.rounded-te-0 {
   border-top-right-radius: 0 !important;
 }
 
@@ -135,6 +143,11 @@ input:not([type="range"]):active {
       $company-300 75%,
       $company-300);
   background-size: 50px 50px;
+}
+
+.bg-repeat {
+  background: url('/assets/img/leaf.svg') top left repeat;
+  background-size: 20px;
 }
 
 // ----- GESTIONE TESTO -----

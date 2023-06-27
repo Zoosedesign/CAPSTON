@@ -20,6 +20,7 @@ import { ScrollAnchorDirective } from './services/scroll-anchor.directive';
 import { ScrollManagerDirective } from './services/scroll-manager.directive';
 import { ScrollSectionDirective } from './services/scroll-section.directive';
 import { BeforeAfterComponent } from './components/before-after/before-after.component';
+import { PlantDetailsComponent } from './pages/plant-details/plant-details.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'plants',
+    path: 'xeriscaping',
+    component: XeriscapingComponent
+  },
+  {
+    path: 'plants/page',
     redirectTo: 'plants/page/1',
     pathMatch: 'full'
   },
@@ -36,9 +41,14 @@ const routes: Routes = [
     component: PlantsComponent
   },
   {
-    path: 'xeriscaping',
-    component: XeriscapingComponent
+    path: 'plants/:id',
+    component: PlantDetailsComponent
   },
+  {
+    path: '**', //per tutte le altre rotte non definite
+    component: HomeComponent,
+    redirectTo: '',
+  }
 ];
 
 @NgModule({
@@ -56,7 +66,8 @@ const routes: Routes = [
     ScrollAnchorDirective,
     ScrollManagerDirective,
     ScrollSectionDirective,
-    BeforeAfterComponent
+    BeforeAfterComponent,
+    PlantDetailsComponent
   ],
   imports: [
     BrowserModule,

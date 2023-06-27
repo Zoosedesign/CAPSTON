@@ -30,15 +30,22 @@ I link saranno quindi:
 <routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
 # IMAGE PLANT ERROR --------------------
-Avendo riscontrato problemi, errori e mancanze di immagini all'interno di alcune piante ho implementato la logica con un operatorio ternario per il recupero dell'immagine:
+Avendo riscontrato problemi, errori, immagini casuali o mancanti all'interno di alcune piante ho implementato la logica filtrando l'array:
 
- <img src="{{(plant.default_image && plant.default_image.original_url !== 'https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg') ? plant.default_image.small_url || plant.default_image.original_url  : '/assets/img/img_placeholder.svg'}}" alt="{{plant.common_name}} image">
+Nel TS qualora [defaultImage] sia null, o l'immagine sia il placeholder erroneo dell'API, la pianta non verrà inserita nell'array. 
 
- 1.Prima di tutto controllo se l'array [plant.defaul_image] esiste e se [plant.default_image.small_url] sia diversa da un'immagine di prova che hanno buttato così dentro a caso quelli dell'API. 
+ 1. Gli array delle pagine essendo ora di numero casuale, imposto un limite a 24 elementi. 
+ <const slicedData = filteredData.slice(0,24);>
 
- 2.Se il punto uno è true, gli dico di inserire [plant.default_image.small_url], qualora non ci fosse optare per la versione [original_url].
+ 2. Nel caso fossero meno di 24, recupero quanti oggetti mancano.
+ <const nummissingPlants = 24 - slicedData.length;>
  
- 3.Se dovesse risultare false, nel caso [plant.default_image] risulti vuoto o null o ci sia solo l'immagine farlocca, inserisco il placeholder per far capire che l'immagine è ancora da caricare.
+ 4. Ripeto gli elementi iniziali dell'array, per quanti elementi servono al raggiungimento dei 24.
+ <const missingPlants = filteredData.slice(0,nummissingPlants);>
+
+ 5. Unisco l'array filtrato con gli eventuali oggetti mancanti.
+ <this.plants= slicedData.concat(missingPlants);>
+
 
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17

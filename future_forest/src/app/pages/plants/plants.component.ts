@@ -13,7 +13,7 @@ export class PlantsComponent implements OnInit {
   halfPage!: number;
   plants!: Plants[];
 
-  constructor(private PlantsSrv: PlantsService) { }
+  constructor(private PlantsSrv: PlantsService,) { }
 
   ngOnInit(): void {
     this.fetchData();
@@ -37,8 +37,25 @@ export class PlantsComponent implements OnInit {
       this.plants = JSON.parse(sessionData);
     } else {
       this.PlantsSrv.getPlant<Pagination>(url).subscribe(page => {
-        //aggiungo l'array recuperato + i primi due oggetti per riempimento griglia card xxl
-        this.plants = [...page.data, page.data[0], page.data[1]];
+        // Filtraggio dell'array page.data
+        const filteredData: Plants[] = page.data.filter(plant => {
+          const defaultImage: any = plant.default_image;
+          const originalUrl: string = defaultImage?.original_url;
+
+          // Restituisco true se default_image non è null o original_url non è l'immagine specificata"
+          return defaultImage !== null && originalUrl !== "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg";
+        });
+
+        // Limito l'array filtrato a un massimo di 24 elementi
+        const slicedData: Plants[] = filteredData.slice(0, 24);
+
+        // Calcola il numero di elementi mancanti per arrivare a 24
+        const nummissingPlants: number = 24 - slicedData.length;
+
+        // prendo gli elementi mancanti dall'inizio dell'array
+        const missingPlants: Plants[] = filteredData.slice(0, nummissingPlants);
+
+        this.plants = slicedData.concat(missingPlants);
         sessionStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
       });
     }
