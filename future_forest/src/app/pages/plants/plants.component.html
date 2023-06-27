@@ -8,7 +8,7 @@
       <article
         class="position-relative card border-0 bg-transparent">
         <!-- inserisco l'immagine e gestisco anche l'errore nel caso non ci fosse -->
-        <a class="position-relative btn px-2 px-sm-3 border-0" routerLink="/plants/:id" fragment="header">
+        <a class="position-relative btn px-2 px-sm-3 border-0" routerLink="/plants/{{plant.id}}" fragment="header">
           <img src="{{plant.default_image.small_url || plant.default_image.original_url}}"
             alt="{{plant.common_name}} image" class="rounded-top-4 rounded-bottom-2 fit-square w-100">
           <!-- elementi grafici -->
@@ -29,7 +29,7 @@
         </div>
       </article>
       <!-- button product details -->
-      <a href="#" class="btn bg-300 rounded-3 rounded-top-0 px-3 py-2 w-75 shadow" routerLink="/plants/:id" fragment="header">
+      <a href="#" class="btn bg-300 rounded-3 rounded-top-0 px-3 py-2 w-75 shadow" routerLink="/plants/{{plant.id}}" fragment="header">
         <span class="d-none d-sm-inline text-day">more info </span><i
           class="fa-solid fa-arrow-up-right-from-square text-day"></i>
       </a>

@@ -13,7 +13,7 @@ export class PlantsComponent implements OnInit {
   halfPage!: number;
   plants!: Plants[];
 
-  constructor(private PlantsSrv: PlantsService,) { }
+  constructor(private PlantsSrv: PlantsService) { }
 
   ngOnInit(): void {
     this.fetchData();
