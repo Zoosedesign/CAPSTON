@@ -15,6 +15,10 @@ a {
   font-weight: 700 !important;
 }
 
+.cursor-zoom {
+  cursor: zoom-in;
+}
+
 .collapsing {
   transition: 0.5s height;
 }
@@ -143,6 +147,10 @@ input:not([type="range"]):active {
       $company-300 75%,
       $company-300);
   background-size: 50px 50px;
+}
+
+.bg-box {
+  background: linear-gradient(180deg, transparent 120px, $company-day 50px);
 }
 
 .bg-repeat {

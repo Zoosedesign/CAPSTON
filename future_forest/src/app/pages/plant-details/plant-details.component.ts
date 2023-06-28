@@ -12,7 +12,7 @@ export class PlantDetailsComponent implements OnInit {
   id!: number;
   plant!: PlantDetails;
 
-  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService) { }
+  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService) {}
 
   ngOnInit(): void {
     //recupero l'id della pianta
@@ -28,12 +28,19 @@ export class PlantDetailsComponent implements OnInit {
 
     if (sessionData) {
       this.plant = JSON.parse(sessionData);
+      this.zoomPlant();
     } else {
       this.PlantsSrv.getPlant<PlantDetails>(url).subscribe(data => {
         this.plant = data;
-        console.log(`${this.plant}\n${this.id}\n${url}`)
+
         sessionStorage.setItem(`plant_${this.id}`, JSON.stringify(this.plant));
+        this.zoomPlant();
       });
     }
+  }
+
+  // ----------- ZOOM IMMAGINE --------------
+  zoomPlant(): void {
+  this.PlantsSrv.imgZoom(this.plant.default_image.original_url, 'product');
   }
 }
