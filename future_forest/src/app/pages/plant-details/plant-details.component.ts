@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { PlantDetails } from 'src/app/models/plant-details.interface';
 import { PlantsService } from 'src/app/services/plants.service';
 
+// import necessario per caricare gli iframe
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-plant-details',
   templateUrl: './plant-details.component.html',
@@ -12,7 +15,7 @@ export class PlantDetailsComponent implements OnInit {
   id!: number;
   plant!: PlantDetails;
 
-  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService) {}
+  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     //recupero l'id della pianta
@@ -42,5 +45,9 @@ export class PlantDetailsComponent implements OnInit {
   // ----------- ZOOM IMMAGINE --------------
   zoomPlant(): void {
   this.PlantsSrv.imgZoom(this.plant.default_image.original_url, 'product');
+  }
+
+  getSafeUrl(iframe: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(iframe);
   }
 }

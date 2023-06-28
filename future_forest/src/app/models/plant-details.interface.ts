@@ -10,6 +10,7 @@ export interface PlantDetails {
     propagation: string[],
     hardiness_location: {
       full_url: string,
+      full_iframe: string
     },
     watering: string, //only minimum
     sunlight: string[], //full_shade, part_shade, sun-part_shade, full_sun
