@@ -15,7 +15,9 @@ export class PlantDetailsComponent implements OnInit {
   id!: number;
   plant!: PlantDetails;
 
-  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) {}
+  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) {
+    console.log('riavvio');
+  }
 
   ngOnInit(): void {
     //recupero l'id della pianta
