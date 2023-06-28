@@ -28,17 +28,17 @@ export class PlantDetailsComponent implements OnInit {
   }
 
   fetchData(): void {
-    const sessionData: string | null = sessionStorage.getItem(`plant_${this.id}`);
+    const localData: string | null = localStorage.getItem(`plant_${this.id}`);
     const url: string = `https://perenual.com/api/species/details/${this.id}?key=sk-dHP9649015b2500351329`;
 
-    if (sessionData) {
-      this.plant = JSON.parse(sessionData);
+    if (localData) {
+      this.plant = JSON.parse(localData);
       this.zoomPlant();
     } else {
       this.PlantsSrv.getPlant<PlantDetails>(url).subscribe(data => {
         this.plant = data;
 
-        sessionStorage.setItem(`plant_${this.id}`, JSON.stringify(this.plant));
+        localStorage.setItem(`plant_${this.id}`, JSON.stringify(this.plant));
         this.zoomPlant();
       });
     }

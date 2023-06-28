@@ -21,7 +21,7 @@ export class PlantsComponent implements OnInit {
 
   fetchData(): void {
     //verifico l'ultima pagina navigata
-    const actualPage: string | null = sessionStorage.getItem('actual_page');
+    const actualPage: string | null = localStorage.getItem('actual_page');
     if (actualPage) {
       this.page = Number(actualPage);
       this.halfPage = Math.ceil(Number(actualPage) / 2);
@@ -30,11 +30,11 @@ export class PlantsComponent implements OnInit {
       this.halfPage = 0;
     }
 
-    //faccio la get solo se non sono già presenti nel session storage i dati della pagina richiesta
-    const sessionData: string | null = sessionStorage.getItem(`page_${this.page}`);
+    //faccio la get solo se non sono già presenti nel local storage i dati della pagina richiesta
+    const localData: string | null = localStorage.getItem(`page_${this.page}`);
     let url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-dHP9649015b2500351329&watering=minimum&sunlight=full_sun`
-    if (sessionData) {
-      this.plants = JSON.parse(sessionData);
+    if (localData) {
+      this.plants = JSON.parse(localData);
     } else {
       this.PlantsSrv.getPlant<Pagination>(url).subscribe(page => {
         // Filtraggio dell'array page.data
@@ -56,7 +56,7 @@ export class PlantsComponent implements OnInit {
         const missingPlants: Plants[] = filteredData.slice(0, nummissingPlants);
 
         this.plants = slicedData.concat(missingPlants);
-        sessionStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
+        localStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
       });
     }
   }
@@ -64,19 +64,19 @@ export class PlantsComponent implements OnInit {
   //-------- PAGE NAVIGATION --------
   pagePlus(): void {
     this.page++;
-    sessionStorage.setItem('actual_page', JSON.stringify(this.page));
+    localStorage.setItem('actual_page', JSON.stringify(this.page));
     this.fetchData();
   }
 
   pageLess(): void {
     this.page--;
-    sessionStorage.setItem(`actual_page`, JSON.stringify(this.page));
+    localStorage.setItem(`actual_page`, JSON.stringify(this.page));
     this.fetchData();
   }
 
   pageChoice(p: number): void {
     this.page = p
-    sessionStorage.setItem('actual_page', JSON.stringify(this.page));
+    localStorage.setItem('actual_page', JSON.stringify(this.page));
     this.fetchData();
   }
 }
