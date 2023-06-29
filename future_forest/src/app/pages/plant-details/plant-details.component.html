@@ -1,8 +1,9 @@
 <main id="details">
   <!------ FOTO PIANTA ------>
   <section class="container-fluid d-flex flex-wrap bg-box py-5 px-2 px-sm-5">
-    <div id="product" class="col-12 col-md-6 position-relative fit-h rounded-4 cursor-zoom"
+    <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-4 cursor-zoom flex-grow-1"
       [style.background-image]="'url(' + plant.default_image.original_url + ')'">
+      <p>ciao</p>
       <figure
         class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute">
         <i class="fa-solid fa-sun text-day"></i>
@@ -13,15 +14,18 @@
     </div>
 
     <!------ DETTAGLI PIANTA ------>
-    <article class="col-12 col-md-6 mt-5 pt-0 pt-md-5 ps-md-4">
-      <h2 class="text-center text-md-start m-0">{{plant.scientific_name}}</h2>
-      <small>{{plant.common_name}}</small>
+    <article class="d-flex flex-column col-12 col-md-6 mt-5 pt-0 pt-md-5 ps-md-4">
+      <div class="text-center text-md-start">
+        <h2 class="m-0">{{plant.scientific_name}}</h2>
+        <small>{{plant.common_name}}</small>
+      </div>
       <hr>
       <p>{{plant.description}}</p>
     </article>
-
-    <!------ CARTINA HABITAT ------>
-    <!-- <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" sandbox="allow-same-origin" frameborder="0"></iframe> -->
-
   </section>
+
+  <aside class="bg-day">
+    <!------ CARTINA HABITAT ------>
+    <!-- <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0" class="fit-h col-12"></iframe> -->
+  </aside>
 </main>

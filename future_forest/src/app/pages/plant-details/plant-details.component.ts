@@ -15,9 +15,7 @@ export class PlantDetailsComponent implements OnInit {
   id!: number;
   plant!: PlantDetails;
 
-  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) {
-    console.log('riavvio');
-  }
+  constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     //recupero l'id della pianta
@@ -46,10 +44,11 @@ export class PlantDetailsComponent implements OnInit {
 
   // ----------- ZOOM IMMAGINE --------------
   zoomPlant(): void {
-  this.PlantsSrv.imgZoom(this.plant.default_image.original_url, 'product');
+  this.PlantsSrv.imgZoom('product');
   }
 
   getSafeUrl(iframe: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(iframe);
   }
+
 }
