@@ -27,7 +27,7 @@ export class PlantDetailsComponent implements OnInit {
 
   fetchData(): void {
     const localData: string | null = localStorage.getItem(`plant_${this.id}`);
-    const url: string = `https://perenual.com/api/species/details/${this.id}?key=sk-dHP9649015b2500351329`;
+    const url: string = `https://perenual.com/api/species/details/${this.id}?key=sk-nSiB649d9c7d4c4e31432`;
 
     if (localData) {
       this.plant = JSON.parse(localData);
@@ -47,8 +47,8 @@ export class PlantDetailsComponent implements OnInit {
   this.PlantsSrv.imgZoom('product');
   }
 
-  getSafeUrl(iframe: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(iframe);
+  getSafeUrl(iframeUrl: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(iframeUrl);
   }
 
 }

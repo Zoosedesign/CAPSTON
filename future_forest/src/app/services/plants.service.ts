@@ -28,19 +28,23 @@ export class PlantsService {
       const xPos: number = event.clientX - box.left;
       const yPos: number = event.clientY - box.top;
       const xPercent: string = xPos / (container.clientWidth / 100) + '%';
-      const yPercent: string = yPos / ((container.clientWidth * zoomFactor) / 100) + '%';
+      const yPercent: string = yPos / ((container.clientHeight) / 100) + '%';
 
       // Modifica le proprietà CSS per spostare lo sfondo dell'immagine in base alla posizione del mouse
       Object.assign(container.style, {
         backgroundPosition: `${xPercent} ${yPercent}`,
-        backgroundSize: container.offsetWidth * zoomFactor + 'px'
+        ...(container.offsetWidth >= container.offsetHeight
+          ? { backgroundSize: container.offsetWidth * zoomFactor + 'px' }
+          : { backgroundSize: container.offsetHeight * zoomFactor + 'px' }
+        )
       });
     };
 
     // Ripristino dimensioni immagine
     container.onmouseleave = (): void => {
       Object.assign(container.style, {
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
       });
     };
   }

@@ -41,7 +41,7 @@ const routes: Routes = [
     component: PlantsComponent
   },
   {
-    path: 'plants/:id',
+    path: 'plants/:pageNumber/:id',
     component: PlantDetailsComponent
   },
   {

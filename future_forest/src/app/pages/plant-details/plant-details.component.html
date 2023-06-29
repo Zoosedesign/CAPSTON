@@ -1,7 +1,7 @@
-<main id="details">
+<main id="details" class="bg-box pb-5">
   <!------ FOTO PIANTA ------>
-  <section class="container-fluid d-flex flex-wrap bg-box py-5 px-4 px-sm-5">
-    <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-4 cursor-zoom flex-grow-1"
+  <section class="container-fluid d-flex flex-wrap pt-5 px-4 px-sm-5">
+    <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-2 rounded-top-4 cursor-zoom flex-grow-1"
       [style.background-image]="'url(' + plant.default_image.original_url + ')'">
       <figure
         class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute">
@@ -14,7 +14,7 @@
 
     <!------ DETTAGLI PIANTA ------>
     <article class="d-flex flex-column col-12 col-md-6 mt-5 pt-0 pt-md-5 ps-md-4">
-      <div class="text-center text-md-start">
+      <div class="text-center text-md-start mb-3">
         <h2 class="m-0">{{plant.scientific_name}}</h2>
         <small>{{plant.common_name}}</small>
       </div>
@@ -23,7 +23,39 @@
     </article>
   </section>
 
-  <aside class="bg-day">
+  <!------ ICONE PIANTA ------>
+  <section class="container-fluid d-flex flex-wrap pt-2 pt-md-5 px-4 px-sm-5">
+    <hr class="col-12">
+    <div class="col-12 d-flex flex-wrap justify-content-center column-gap-4 column-gap-xl-5 px-0 px-sm-2 px-lg-5">
+      <p><i class="fa-solid fa-tree"></i> {{plant.scientific_name[0].split(' ')[0]}}</p>
+      <p><i class="fa-solid fa-location-dot"></i> {{plant.origin || 'unknown'}}</p>
+      <p><i class="fa-solid fa-dna"></i> {{plant.cycle || 'unknown'}}</p>
+      <p><i class="fa-solid fa-arrow-up-wide-short"></i> {{plant.growth_rate || 'unknown'}}</p>
+      <p><i class="fa-solid fa-ruler"></i> {{plant.dimension || 'unknown'}}</p>
+      <p><i class="fa-solid fa-seedling"></i>
+        {{ plant.propagation.length > 0 ? plant.propagation[0].split(' ')[0] : 'unknown' }}
+        {{ plant.propagation.length > 1 ? ', ' + plant.propagation[1].split(' ')[0] : '' }}
+        {{ plant.propagation.length > 2 ? ', ' + plant.propagation[2].split(' ')[0] : '' }}
+      </p>
+      <p><i class="fa-solid fa-droplet"></i> {{plant.watering || 'unknown'}}</p>
+      <p><i class="fa-solid fa-droplet-slash"></i> {{plant.drought_tolerant || 'no'}}</p>
+      <p><i class="fa-solid fa-sun"></i>
+        {{ plant.sunlight.length > 0 ? plant.sunlight[0] : 'unknown' }}
+        {{ plant.sunlight.length > 1 ? ', ' + plant.sunlight[1] : '' }}
+      </p>
+      <p><i class="fa-solid fa-house"></i> {{plant.indoor || 'never'}}</p>
+      <p><i class="fa-solid fa-apple-whole"></i> {{plant.edible_fruit || 'no'}}</p>
+      <p><i class="fa-solid fa-spa"></i> {{plant.flowers || 'unknown'}}</p>
+      <p><i class="fa-brands fa-envira"></i>
+        {{ plant.leaf_color.length > 0 ? plant.leaf_color[0] : 'unknown' }}
+        {{ plant.leaf_color.length > 1 ? ', ' + plant.leaf_color[1] : '' }}
+        {{ plant.leaf_color.length > 2 ? ', ' + plant.leaf_color[2] : '' }}</p>
+      <p><i class="fa-solid fa-hand-holding-heart"></i> {{plant.maintenance || plant.care_level || 'unknown'}}</p>
+    </div>
+    <hr class="col-12 mt-0">
+  </section>
+
+  <aside>
     <!------ CARTINA HABITAT ------>
     <!-- <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0" class="fit-h col-12"></iframe> -->
   </aside>
