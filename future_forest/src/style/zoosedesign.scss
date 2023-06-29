@@ -50,6 +50,10 @@ input:not([type="range"]):active {
   z-index: -2 !important;
 }
 
+.z-n3 {
+  z-index: -3 !important;
+}
+
 // per dare l'hover ai bg dei colori company
 .btn.bg-day:hover,
 .btn.bg-100:hover,
@@ -150,7 +154,15 @@ input:not([type="range"]):active {
 }
 
 .bg-box {
-  background: linear-gradient(180deg, transparent 120px, $company-day 50px);
+  background: linear-gradient(180deg, transparent 120px, $company-day 120px);
+}
+
+.bg-box-extra {
+  background: linear-gradient(180deg, transparent 120px, $company-extra 120px);
+}
+
+.bg-center {
+  background: linear-gradient(180deg, transparent 120px, $company-extra 120px, $company-extra calc(100% - 120px), transparent calc(100% - 120px));
 }
 
 .bg-repeat {

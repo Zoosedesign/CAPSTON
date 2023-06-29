@@ -1,40 +1,6 @@
 <main id="plants">
 
-  <section class="container-fluid d-flex flex-row flex-wrap py-4 px-2 px-sm-4">
-
-    <!------- CARD TEMPLATE ------->
-    <!-- ngClass serve per visualizzare le card extra solo su dimensioni xxl -->
-    <div class="col-6 col-lg-4 col-xxl-3 py-4 px-2 px-sm-4 text-center" *ngFor="let plant of plants">
-      <article
-        class="position-relative card border-0 bg-transparent">
-        <!-- inserisco l'immagine e gestisco anche l'errore nel caso non ci fosse -->
-        <a class="position-relative btn px-2 px-sm-3 border-0" routerLink="/plants/{{plant.id}}" fragment="header">
-          <img src="{{plant.default_image.small_url || plant.default_image.original_url}}"
-            alt="{{plant.common_name}} image" class="rounded-2 rounded-top-4 fit-square w-100">
-          <!-- elementi grafici -->
-          <span class="position-absolute bottom-0 start-0 bg-200 z-n1 w-100 rounded-pill py-3"></span>
-          <span class="position-absolute bottom-0 start-0 bg-day z-n2 w-100 rounded-4 rounded-bottom-0 py-3"></span>
-        </a>
-
-        <div class="card-body bg-day rounded-bottom-4 shadow text-start">
-          <h5 class="card-title truncate-one mt-2">{{plant.scientific_name}}</h5>
-          <small class="card-text truncate-one mb-4">{{plant.common_name}}</small>
-
-          <figure class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5">
-            <i class="fa-solid fa-sun text-day"></i>
-            <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
-            <i class="fa-solid fa-droplet-slash text-day"></i>
-            <i class="fa-solid fa-hand-holding-droplet text-day"></i>
-          </figure>
-        </div>
-      </article>
-      <!-- button product details -->
-      <a href="#" class="btn bg-300 rounded-3 rounded-top-0 px-3 py-2 w-75 shadow" routerLink="/plants/{{page}}/{{plant.id}}" fragment="header">
-        <span class="d-none d-sm-inline text-day">more info </span><i
-          class="fa-solid fa-arrow-up-right-from-square text-day"></i>
-      </a>
-    </div>
-  </section>
+  <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
 
   <!-------- PAGE NAVIGATION -------->
   <div id="navbarPage" class="container d-flex justify-content-evenly align-items-center py-2 px-2 px-sm-5">

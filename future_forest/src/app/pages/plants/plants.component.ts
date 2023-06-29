@@ -32,7 +32,8 @@ export class PlantsComponent implements OnInit {
 
     //faccio la get solo se non sono già presenti nel local storage i dati della pagina richiesta
     const localData: string | null = localStorage.getItem(`page_${this.page}`);
-    let url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-nSiB649d9c7d4c4e31432&watering=minimum&sunlight=full_sun`
+    const url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-nSiB649d9c7d4c4e31432&watering=minimum&sunlight=full_sun`
+
     if (localData) {
       this.plants = JSON.parse(localData);
     } else {

@@ -21,6 +21,7 @@ import { ScrollManagerDirective } from './services/scroll-manager.directive';
 import { ScrollSectionDirective } from './services/scroll-section.directive';
 import { BeforeAfterComponent } from './components/before-after/before-after.component';
 import { PlantDetailsComponent } from './pages/plant-details/plant-details.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 const routes: Routes = [
   {
@@ -67,7 +68,8 @@ const routes: Routes = [
     ScrollManagerDirective,
     ScrollSectionDirective,
     BeforeAfterComponent,
-    PlantDetailsComponent
+    PlantDetailsComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

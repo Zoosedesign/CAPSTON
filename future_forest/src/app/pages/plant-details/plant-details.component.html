@@ -1,4 +1,4 @@
-<main id="details" class="bg-box pb-5">
+<main id="details" class="bg-box">
   <!------ FOTO PIANTA ------>
   <section class="container-fluid d-flex flex-wrap pt-5 px-4 px-sm-5">
     <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-2 rounded-top-4 cursor-zoom flex-grow-1"
@@ -19,7 +19,7 @@
         <small>{{plant.common_name}}</small>
       </div>
       <hr>
-      <p>{{plant.description}}</p>
+      <p class="pe-lg-5">{{plant.description}}</p>
     </article>
   </section>
 
@@ -28,7 +28,7 @@
     <hr class="col-12">
     <div class="col-12 d-flex flex-wrap justify-content-center column-gap-4 column-gap-xl-5 px-0 px-sm-2 px-lg-5">
       <p><i class="fa-solid fa-tree"></i> {{plant.scientific_name[0].split(' ')[0]}}</p>
-      <p><i class="fa-solid fa-location-dot"></i> {{plant.origin || 'unknown'}}</p>
+      <p><i class="fa-solid fa-location-dot"></i> {{plant.origin[0] || 'unknown'}}</p>
       <p><i class="fa-solid fa-dna"></i> {{plant.cycle || 'unknown'}}</p>
       <p><i class="fa-solid fa-arrow-up-wide-short"></i> {{plant.growth_rate || 'unknown'}}</p>
       <p><i class="fa-solid fa-ruler"></i> {{plant.dimension || 'unknown'}}</p>
@@ -54,6 +54,10 @@
     </div>
     <hr class="col-12 mt-0">
   </section>
+
+  <!------ PIANTE EXTRA ------>
+  <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
+
 
   <aside>
     <!------ CARTINA HABITAT ------>

@@ -19,7 +19,7 @@ export class PlantsService {
   imgZoom(tagId: string): void {
     const container = document.getElementById(tagId) as HTMLElement;
 
-    const zoomFactor: number = 2; // Fattore di zoom desiderato
+    const zoomFactor: number = 1.5; // Fattore di zoom desiderato
 
     container.onmousemove = event => {
       // Ottiene le dimensioni e la posizione dell'elemento container
@@ -49,4 +49,13 @@ export class PlantsService {
     };
   }
 
+  // ----------- RANDOM --------------
+  shuffleArray<T>(array: T[]): T[] {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  }
 }
