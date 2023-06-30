@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
+// interfacce
 import { Pagination } from 'src/app/models/pagination.interface';
 import { Plants } from 'src/app/models/plants.interface';
 import { PlantsService } from 'src/app/services/plants.service';
@@ -9,18 +13,18 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./plants.component.scss']
 })
 export class PlantsComponent implements OnInit {
-  page!: number;
+  page: number = 1;
   halfPage!: number;
   plants!: Plants[];
 
-  constructor(private PlantsSrv: PlantsService) { }
+  constructor(private PlantsSrv: PlantsService, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchData();
   }
 
   fetchData(): void {
-    //verifico l'ultima pagina navigata
+    // verifico l'ultima pagina navigata
     const actualPage: string | null = localStorage.getItem('actual_page');
     if (actualPage) {
       this.page = Number(actualPage);
@@ -30,9 +34,13 @@ export class PlantsComponent implements OnInit {
       this.halfPage = 0;
     }
 
-    //faccio la get solo se non sono già presenti nel local storage i dati della pagina richiesta
+    // verifico che l'url riporti la pagina corretta
+    this.router.navigate(['/plants/page', this.page], { fragment: 'header' });
+
+    //-------- RECUPERO LE PIANTE --------
+    // faccio la get solo se non sono già presenti nel local storage i dati della pagina richiesta
     const localData: string | null = localStorage.getItem(`page_${this.page}`);
-    const url: string = `https://perenual.com/api/species-list?page=${this.page}&key=sk-nSiB649d9c7d4c4e31432&watering=minimum&sunlight=full_sun`
+    const url: string = `https://perenual.com/api/species-list?page=${this.page}&key=${environment.APItoken}&watering=minimum&sunlight=full_sun`
 
     if (localData) {
       this.plants = JSON.parse(localData);

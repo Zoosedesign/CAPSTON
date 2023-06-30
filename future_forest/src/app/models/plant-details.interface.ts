@@ -24,6 +24,7 @@ export interface PlantDetails {
     description: string,
     //----- IMMAGINI -----
     default_image: {
-      original_url: string
+      original_url: string,
+      regular_url: string
     }
 }

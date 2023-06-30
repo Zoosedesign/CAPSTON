@@ -17,7 +17,7 @@
   <nav class="collapse navbar-collapse my-3 mt-md-0" id="navbarSupportedContent">
     <ul class="navbar-nav my-2 my-md-0 text-center me-auto">
       <li class="nav-item pe-3">
-        <a class="nav-link text-nowrap" routerLink="/plants/page" fragment="header" routerLinkActive="active"><i
+        <a class="nav-link text-nowrap" routerLink="/plants/page/{{plantsPage}}" fragment="header" routerLinkActive="active" (click)="setPage()"><i
             class="fa-brands fa-envira"></i> Plants</a>
       </li>
       <hr class="d-md-none border-1 border-300 my-1">

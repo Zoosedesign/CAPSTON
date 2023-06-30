@@ -30,11 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'xeriscaping',
-    component: XeriscapingComponent
-  },
-  {
-    path: 'plants/page',
-    redirectTo: 'plants/page/1',
+    component: XeriscapingComponent,
     pathMatch: 'full'
   },
   {

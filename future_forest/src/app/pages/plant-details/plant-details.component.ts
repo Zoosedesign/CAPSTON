@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
+// interfacce
 import { PlantDetails } from 'src/app/models/plant-details.interface';
 import { Plants } from 'src/app/models/plants.interface';
 import { PlantsService } from 'src/app/services/plants.service';
@@ -21,7 +24,7 @@ export class PlantDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    //recupero l'id della pianta
+    // recupero l'id della pianta
     this.route.paramMap.subscribe(params => {
       this.id = Number(params.get('id'));
       this.page = Number(params.get('pageNumber'));
@@ -30,10 +33,10 @@ export class PlantDetailsComponent implements OnInit {
   }
 
   fetchData(): void {
-    //recupero dati nel localStorage
+    // recupero dati nel localStorage
     const localData: string | null = localStorage.getItem(`plant_${this.id}`);
 
-    const url: string = `https://perenual.com/api/species/details/${this.id}?key=sk-nSiB649d9c7d4c4e31432`;
+    const url: string = `https://perenual.com/api/species/details/${this.id}?key=${environment.APItoken}`;
 
     if (localData) {
       this.plant = JSON.parse(localData);
@@ -45,7 +48,7 @@ export class PlantDetailsComponent implements OnInit {
       });
     }
 
-    // ----------- PIANTE EXTRA --------------
+    //----------- PIANTE EXTRA --------------
     const localPlants: string | null = localStorage.getItem(`page_${this.page}`);
 
     const randomPlants: Plants[] = this.PlantsSrv.shuffleArray<Plants>(JSON.parse(localPlants!)
@@ -57,12 +60,12 @@ export class PlantDetailsComponent implements OnInit {
     this.zoomPlant();
   }
 
-  // ----------- ZOOM IMMAGINE --------------
+  //----------- ZOOM IMMAGINE --------------
   zoomPlant(): void {
     this.PlantsSrv.imgZoom('product');
   }
 
-  // ----------- GET SAFE IFRAME URL --------------
+  //----------- GET SAFE IFRAME URL --------------
   getSafeUrl(iframeUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(iframeUrl);
   }
