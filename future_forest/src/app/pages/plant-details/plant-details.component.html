@@ -52,15 +52,18 @@
         {{ plant.leaf_color.length > 2 ? ', ' + plant.leaf_color[2] : '' }}</p>
       <p><i class="fa-solid fa-hand-holding-heart"></i> {{plant.maintenance || plant.care_level || 'unknown'}}</p>
     </div>
-    <hr class="col-12 mt-0">
   </section>
+
+  <aside class="text-center mt-4">
+    <div class="bg-line">
+      <h3 class="bg-day d-inline px-2">HARDINESS LOCATION MAP</h3>
+    </div>
+    <!------ CARTINA HABITAT ------>
+    <!-- <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0" class="col-12 overflow-hidden"
+      scrolling="no" sandbox="allow-same-origin allow-scripts">
+    </iframe> -->
+  </aside>
 
   <!------ CARD PIANTE EXTRA ------>
   <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
-
-
-  <aside>
-    <!------ CARTINA HABITAT ------>
-    <!-- <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0" class="fit-h col-12"></iframe> -->
-  </aside>
 </main>
