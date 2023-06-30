@@ -137,7 +137,7 @@ input:not([type="range"]):active {
 
 // linea di sfondo centrale per titoli
 .bg-line {
-  background: linear-gradient(0deg, transparent calc(50% - 1px), $company-100 calc(50% - 1px), $company-100 calc(50% + 1px), transparent calc(50% + 1px));
+  background: linear-gradient(0deg, transparent calc(50% - 0.5px), $company-300-opacity calc(50% - 0.5px), $company-300-opacity calc(50% + 0.5px), transparent calc(50% + 0.5px));
 }
 
 // per creare texture

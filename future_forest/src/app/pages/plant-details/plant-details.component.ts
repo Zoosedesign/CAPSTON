@@ -69,5 +69,4 @@ export class PlantDetailsComponent implements OnInit {
   getSafeUrl(iframeUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(iframeUrl);
   }
-
 }

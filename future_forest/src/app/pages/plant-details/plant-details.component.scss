@@ -9,5 +9,29 @@
 }
 
 #details iframe {
-  height: 48vw;
+  height: 39.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #details iframe {
+    height: 19.5vw;
+  }
+}
+
+#details #design {
+  height: calc(100% - 85vh);
+  width: 66%;
+  transform: skewX(30deg)
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1250px) {
+  #details #design {
+    max-height: 630px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #details #design {
+    width: 63%;
+  }
 }
