@@ -16,7 +16,7 @@
 
 #range {
   position: absolute;
-  bottom: -40px;
+  bottom: -35px;
   width: 100vw;
 }
 
@@ -24,19 +24,7 @@
 //type range
 input[type=range] {
   appearance: none;
-  height: 25px;
-  background: transparent;
-}
-
-//track style
-input[type=range]::-webkit-slider-runnable-track {
-  height: 5px;
-  cursor: pointer;
-  background: transparent;
-}
-
-input[type=range]::-moz-range-track {
-  height: 5px;
+  height: 20px;
   cursor: pointer;
   background: transparent;
 }
@@ -44,18 +32,20 @@ input[type=range]::-moz-range-track {
 //cursor style
 input[type=range]::-webkit-slider-thumb {
   appearance: none;
-  height: 50px;
-  width: 200px;
+  height: 100%;
+  width: min(40vw, 200px);
   border: 0;
-  background: url("/assets/img/before_after_arrow.svg") no-repeat bottom center;
+  background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
+  background-size: contain;
   cursor: ew-resize;
 }
 
 input[type=range]::-moz-range-thumb {
-  height: 50px;
-  width: 200px;
+  height: 100%;
+  width: min(40vw, 200px);
   border: 0;
-  background: url("/assets/img/before_after_arrow.svg") no-repeat center center;
+  background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
+  background-size: contain;
   cursor: ew-resize;
 }
 
