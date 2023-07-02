@@ -5,10 +5,8 @@ import { Component, Input } from '@angular/core';
   template: `
     <figure id="before" class="mb-0" [style.backgroundImage]="'url(' + beforeImageUrl + ')'" >
       <div id="after" [style.backgroundImage]="'url(' + afterImageUrl + ')'" ></div>
-      <input type="range" min="0" max="100" value="70" id="range" (input)="moveDivisor()">
-    </figure>
-
-      `,
+      <input type="range" min="0" max="100" value="67" id="range" (input)="moveDivisor()">
+    </figure>`,
   styleUrls: ['./before-after.component.scss']
 })
 export class BeforeAfterComponent {

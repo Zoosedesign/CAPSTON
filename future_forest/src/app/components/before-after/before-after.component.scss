@@ -9,14 +9,14 @@
 
 #after {
   background-size: 100vw min(80vh, 90vw);
-  width: 70vw;
+  width: 67vw;
   border-right: 5px solid $company-extra;
   height: min(80vh, 90vw);
 }
 
 #range {
   position: absolute;
-  bottom: -35px;
+  bottom: -30px;
   width: 100vw;
 }
 
@@ -32,8 +32,8 @@ input[type=range] {
 //cursor style
 input[type=range]::-webkit-slider-thumb {
   appearance: none;
-  height: 100%;
-  width: min(40vw, 200px);
+  height: min(4vw, 17px);
+  width: min(40vw, 166px);
   border: 0;
   background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
   background-size: contain;
@@ -41,8 +41,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]::-moz-range-thumb {
-  height: 100%;
-  width: min(40vw, 200px);
+  height: min(4vw, 17px);
+  width: min(40vw, 166px);
   border: 0;
   background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
   background-size: contain;

@@ -197,6 +197,10 @@ input:not([type="range"]):active {
   color: $company-night !important;
 }
 
+.text-justify {
+  text-align: justify !important;
+}
+
 // testo grande con grandezza minima (20vw) e massima (10rem)
 .fs-0 {
   font-size: min(20vw, 10rem);
