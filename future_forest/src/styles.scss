@@ -49,3 +49,7 @@ h6 {
   float: right;
   shape-outside: radial-gradient(farthest-side at left, transparent calc(100% - var(--p)), #fff 0);
 }
+
+.bg-jar {
+  background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4);
+}

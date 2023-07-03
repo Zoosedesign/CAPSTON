@@ -5,7 +5,7 @@
       <div id="product" class="rounded-top-4 rounded-bottom-3 cursor-zoom flex-grow-1 z-1"
         [style.background-image]="'url(' + (plant.default_image.regular_url || plant.default_image.original_url) + ')'">
         <figure
-          class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute z-1">
+          class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute z-1 d-xl-none">
           <i class="fa-solid fa-sun text-day"></i>
           <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
           <i class="fa-solid fa-droplet-slash text-day"></i>
@@ -18,13 +18,15 @@
     <article
       class="d-flex flex-column col-12 col-md-6 pt-0 mt-5 mt-xl-0 pt-md-5 ps-md-5 pe-xl-5 bg-day rounded-top-4 rounded-ts-0">
       <div class="text-center text-md-start mb-4">
-        <h2 class="m-0 fs-1 col-xl-10">{{plant.scientific_name}}</h2>
+        <h2 class="m-0 fs-1">{{plant.scientific_name}}</h2>
         <small class="fs-4">{{plant.common_name}}</small>
+
+        <hr>
       </div>
       <p class="mb-5 mb-md-0 text-center text-md-start">{{plant.description}}</p>
     </article>
 
-    <span class="design position-absolute bg-danger z-n1 bg-day rounded-4"></span>
+    <span class="position-absolute z-n1 bg-day rounded-4"></span>
   </section>
 
   <!------ ICONE PIANTA ------>
@@ -36,7 +38,7 @@
       </div>
 
       <div id="features"
-        class="d-flex flex-wrap justify-content-center column-gap-3 column-gap-xl-4 column-gap-xxl-5 rounded-bottom-4 pt-3 pt-md-5 mt-4 mt-xl-0 pb-2 pb-xl-4 px-0 px-md-3 px-xxl-5 bg-day">
+        class="d-flex flex-wrap justify-content-center column-gap-3 column-gap-xl-4 column-gap-xxl-5 rounded-bottom-5 pt-3 pt-md-5 mt-4 mt-xl-0 pb-2 pb-xl-4 px-0 px-md-3 px-xxl-5 bg-day">
         <p><i class="fa-solid fa-tree"></i> {{plant.scientific_name[0].split(' ')[0]}}</p>
         <p><i class="fa-solid fa-location-dot"></i> {{plant.origin[0] || 'unknown'}}</p>
         <p><i class="fa-solid fa-dna"></i> {{plant.cycle || 'unknown'}}</p>
@@ -48,7 +50,6 @@
           {{ plant.propagation.length > 2 ? ', ' + plant.propagation[2].split(' ')[0] : '' }}
         </p>
         <p><i class="fa-solid fa-droplet"></i> {{plant.watering || 'unknown'}}</p>
-        <p><i class="fa-solid fa-droplet-slash"></i> {{plant.drought_tolerant || 'no'}}</p>
         <p><i class="fa-solid fa-sun"></i>
           {{ plant.sunlight.length > 0 ? plant.sunlight[0] : 'unknown' }}
           {{ plant.sunlight.length > 1 ? ', ' + plant.sunlight[1] : '' }}
@@ -61,6 +62,14 @@
           {{ plant.leaf_color.length > 1 ? ', ' + plant.leaf_color[1] : '' }}
           {{ plant.leaf_color.length > 2 ? ', ' + plant.leaf_color[2] : '' }}</p>
         <p><i class="fa-solid fa-hand-holding-heart"></i> {{plant.maintenance || plant.care_level || 'unknown'}}</p>
+
+        <figure
+          class="d-none d-xl-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 mt-4">
+          <i class="fa-solid fa-sun text-day"></i>
+          <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
+          <i class="fa-solid fa-droplet-slash text-day"></i>
+          <i class="fa-solid fa-hand-holding-droplet text-day"></i>
+        </figure>
       </div>
     </div>
 
@@ -74,9 +83,9 @@
         class="col-12 overflow-hidden px-xxl-5 mt-4 mb-xl-5" scrolling="no"></iframe>
     </aside>
 
-    <span class="design position-absolute bottom-0 bg-danger z-n1 rounded-4 bg-day"></span>
-    <span class="design position-absolute bg-danger z-0 rounded-pill bg-200"></span>
-    <span class="design position-absolute bg-danger z-n1 bg-day"></span>
+    <span class="design position-absolute z-n1 rounded-4 bg-day"></span>
+    <span class="design position-absolute z-0 rounded-pill bg-200"></span>
+    <span class="design position-absolute z-n1 bg-day"></span>
   </section>
 
   <!------ CARD PIANTE EXTRA ------>

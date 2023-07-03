@@ -5,7 +5,7 @@
   min-height: 300px;
 }
 
-#details figure {
+#details #product figure {
   bottom: -27.5px;
   left: calc(12.5% - 5px);
 }
@@ -23,38 +23,40 @@
     margin-top: 3.4rem;
   }
 
-  #details iframe {
-    height: 19.5vw;
+  #details #features {
+    background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4) !important;
   }
 
-  #details #cards {
-    margin-top: -80px;
+  #details iframe {
+    height: 19.5vw;
   }
 
   #details section:nth-of-type(1) span:nth-of-type(1) {
     top: 48px;
     left: calc(50% - 3rem);
     width: 6rem;
-    height: 500px;
+    height: 550px;
   }
 
-  #details span:nth-of-type(1) {
+  #details span.design:nth-of-type(1) {
+    bottom: -9rem;
     left: calc(50% - 3rem);
-    width: 6rem;
-    height: 300px;
+    width: 50%;
+    height: 550px;
   }
 
-  #details span:nth-of-type(2) {
+  #details span.design:nth-of-type(2) {
     top: -2.5rem;
     left: 3rem;
     width: calc(50% - 3rem);
     height: 3rem;
   }
 
-  #details span:nth-of-type(3) {
+  #details span.design:nth-of-type(3) {
     top: -1rem;
     left: 3rem;
     width: calc(50% - 3rem);
     height: 3rem;
+    background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4) !important;
   }
 }
