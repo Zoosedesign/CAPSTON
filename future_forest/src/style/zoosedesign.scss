@@ -61,7 +61,7 @@ input:not([type="range"]):active {
 .btn.bg-300:hover,
 .btn.bg-extra:hover,
 .btn.bg-night:hover {
-  filter: brightness(75%) !important;
+  filter: brightness(80%) !important;
 }
 
 // ----- BORDI -----
@@ -133,7 +133,6 @@ input:not([type="range"]):active {
 .bg-night {
   background: $company-night !important;
 }
-
 
 // linea di sfondo centrale per titoli
 .bg-line {

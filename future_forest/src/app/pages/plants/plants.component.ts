@@ -47,24 +47,8 @@ export class PlantsComponent implements OnInit {
     } else {
       this.PlantsSrv.getPlant<Pagination>(url).subscribe(page => {
         // Filtraggio dell'array page.data
-        const filteredData: Plants[] = page.data.filter(plant => {
-          const defaultImage: any = plant.default_image;
-          const originalUrl: string = defaultImage?.original_url;
-
-          // Restituisco true se default_image non è null o original_url non è l'immagine specificata"
-          return defaultImage !== null && originalUrl !== "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg";
-        });
-
-        // Limito l'array filtrato a un massimo di 24 elementi
-        const slicedData: Plants[] = filteredData.slice(0, 24);
-
-        // Calcola il numero di elementi mancanti per arrivare a 24
-        const nummissingPlants: number = 24 - slicedData.length;
-
-        // prendo gli elementi mancanti dall'inizio dell'array
-        const missingPlants: Plants[] = filteredData.slice(0, nummissingPlants);
-
-        this.plants = slicedData.concat(missingPlants);
+        this.plants = this.PlantsSrv.APIfilter(page.data);
+        // Inserimento nel LocalStorage
         localStorage.setItem(`page_${this.page}`, JSON.stringify(this.plants));
       });
     }
