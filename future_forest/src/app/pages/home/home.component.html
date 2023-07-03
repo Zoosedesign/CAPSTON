@@ -3,13 +3,16 @@
   <section class="position-relative">
     <app-before-after beforeImageUrl="/assets/img/desert.jpg" afterImageUrl="/assets/img/green.jpg"></app-before-after>
 
-    <article class="d-none d-sm-block position-absolute end-50 rounded-circle circle-wrap text-center company-border me-0 me-md-5 mt-5 mt-md-3">
+    <article
+      class="d-none d-sm-block position-absolute end-50 rounded-circle circle-wrap text-center company-border me-0 me-md-5 mt-5 mt-md-3">
       <i></i>
       <h2>Join Our Green Transition!
       </h2>
-      <p class="d-none d-md-block mb-0">Choose drought-resistant plants for a sustainable garden. Saving time and money.</p>
+      <p class="d-none d-md-block mb-0">Choose drought-resistant plants for a sustainable garden. Saving time and money.
+      </p>
       <br>
-      <a routerLink="/xeriscaping" fragment="header" class="d-md-none btn bg-300 text-extra shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>&nbsp;
+      <a routerLink="/xeriscaping" fragment="header"
+        class="d-md-none btn bg-300 text-extra shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>&nbsp;
     </article>
   </section>
 
@@ -19,11 +22,12 @@
     <app-our-mission></app-our-mission>
   </section>
 
-  <section class="vh-100 bg-200" appScrollSection="plants">
+  <section class="position-relative bg-middle">
+    <span id="plant-anchor" appScrollSection="plants" class="position-absolute"></span>
     <app-our-plants></app-our-plants>
   </section>
 
-  <section class="vh-100 bg-100" appScrollSection="who">
+  <section class="vh-100 bg-extra" appScrollSection="who">
     <app-who-we-are></app-who-we-are>
   </section>
 

@@ -1,6 +1,13 @@
 # FUTURE FOREST --------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 
+# ONLY CUSTOM DESIGN --------------------
+Ogni elemento presente, dall'immagine prima e dopo, alla paginazione, ai vari effetti di scroll e zoom sono tutti stati creati senza l'importazione di librerie grafiche esterne oltre al classico CSS di bootstrap, in modo da diminuire la pesantezza della SPA aumentandone allo stesso tempo la reattività.
+
+
+# IMPROVE CHARGE SPEED --------------------
+Per aumentare la velocità di caricamento della pagina piante, nella sezione home OurPlant, viene già caricato il primo array e il service di filtro dei dati dell'Api, in modo da velocizzare ulteriormente il recupero dei dati dall'Api.
+
 
 # API PERENUAL --------------------
 300 API Request / Day
@@ -29,7 +36,8 @@ Avendo l'appScrollManager in app.component.html, per resettare lo scroll i link 
 I link saranno quindi:
 <routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
-# IMAGE PLANT ERROR --------------------
+
+# IMAGE PLANT ERROR FILTER --------------------
 Avendo riscontrato problemi, errori, immagini casuali o mancanti all'interno di alcune piante ho implementato la logica filtrando l'array:
 
 Nel TS qualora [defaultImage] sia null, o l'immagine sia il placeholder erroneo dell'API, la pianta non verrà inserita nell'array. 
@@ -49,4 +57,3 @@ Nel TS qualora [defaultImage] sia null, o l'immagine sia il placeholder erroneo 
 
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17
-

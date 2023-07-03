@@ -160,6 +160,10 @@ input:not([type="range"]):active {
   background: linear-gradient(180deg, transparent 120px, $company-extra 120px);
 }
 
+.bg-middle {
+  background: linear-gradient(180deg, $company-day 50%, $company-day 50%, $company-extra 50%, $company-extra);
+}
+
 .bg-center {
   background: linear-gradient(180deg, transparent 120px, $company-extra 120px, $company-extra calc(100% - 120px), transparent calc(100% - 120px));
 }
