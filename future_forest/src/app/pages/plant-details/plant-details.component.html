@@ -1,7 +1,7 @@
-<main id="details" class="bg-box position-relative">
+<main id="details" class="bg-box">
   <!------ FOTO PIANTA ------>
-  <section class="container-fluid d-flex flex-wrap pt-5 px-4 px-sm-5">
-    <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-2 rounded-top-4 cursor-zoom flex-grow-1"
+  <section class="d-flex flex-wrap pt-5 px-4 px-sm-5">
+    <div id="product" class="d-flex col-12 col-md-6 position-relative rounded-top-4 cursor-zoom flex-grow-1"
       [style.background-image]="'url(' + (plant.default_image.regular_url || plant.default_image.original_url) + ')'">
       <figure
         class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute">
@@ -13,27 +13,25 @@
     </div>
 
     <!------ DETTAGLI PIANTA ------>
-    <article class="d-flex flex-column col-12 col-md-6 mt-5 pt-0 pt-md-5 ps-md-4">
-      <div class="text-center text-md-start mb-3">
-        <h2 class="m-0">{{plant.scientific_name}}</h2>
-        <small>{{plant.common_name}}</small>
+    <article class="d-flex flex-column col-12 col-md-6 mt-5 pt-0 pt-md-5 ps-md-5 pe-xl-5 bg-day rounded-top-4 rounded-ts-0">
+      <div class="text-center text-md-start mb-4">
+        <h2 class="m-0 fs-1">{{plant.scientific_name}}</h2>
+        <small class="fs-4">{{plant.common_name}}</small>
       </div>
-      <hr>
-      <p class="pe-lg-5">{{plant.description}}</p>
+      <p class="mb-5 mb-lg-0 text-center text-md-start">{{plant.description}}</p>
     </article>
   </section>
 
   <!------ ICONE PIANTA ------>
-  <section class="container-fluid d-flex flex-wrap pt-2 pt-md-5 px-4 px-sm-5">
+  <section class="d-flex flex-wrap px-4 px-sm-5">
     <div class="col-12 col-xl-6">
 
       <div class="bg-line d-block d-md-none text-center mb-4">
         <h3 class="bg-day px-2 px-xl-4 d-inline">FEATURES</h3>
       </div>
 
-      <hr class="d-none d-md-block mb-4">
-
-      <div class="d-flex flex-wrap justify-content-center column-gap-3 column-gap-lg-4 column-gap-xl-5 px-0 px-sm-2 px-xxl-5">
+      <div id="features"
+        class="d-flex flex-wrap justify-content-center column-gap-3 column-gap-xl-4 column-gap-xxl-5 rounded-bottom-4 rounded-be-0 pt-3 pt-md-5 mt-4 mt-xl-0 pb-2 pb-xl-4 px-0 px-md-3 px-xxl-5">
         <p><i class="fa-solid fa-tree"></i> {{plant.scientific_name[0].split(' ')[0]}}</p>
         <p><i class="fa-solid fa-location-dot"></i> {{plant.origin[0] || 'unknown'}}</p>
         <p><i class="fa-solid fa-dna"></i> {{plant.cycle || 'unknown'}}</p>
@@ -61,20 +59,19 @@
       </div>
     </div>
 
-    <aside class="text-center text-xl-start mt-4 mt-xl-0 col-12 col-xl-6">
-      <div class="bg-line mb-4 mb-xl-2">
-        <h3 class="bg-day px-2 px-xl-4 d-none d-sm-inline">HARDINESS LOCATION MAP</h3>
-        <h3 class="bg-day px-2 px-xl-4 d-inline d-sm-none">HABITAT</h3>
+    <aside class="text-center text-xl-start mt-4 mt-xl-0 col-12 col-xl-6 px-xl-5 bg-day rounded-bottom-4">
+      <div class="bg-line mb-4 mb-xl-0">
+        <h3 class="bg-day px-2 ps-xl-0 d-none d-sm-inline d-xl-none m-0">HARDINESS LOCATION MAP</h3>
+        <h3 class="bg-day px-2 d-inline d-sm-none m-0">HABITAT</h3>
       </div>
       <!------ CARTINA HABITAT ------>
-      <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0" class="col-12 overflow-hidden px-lg-5 ps-xl-4"
-        scrolling="no">
-      </iframe>
+      <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0"
+        class="col-12 overflow-hidden px-xxl-5 mt-4 mb-xl-5" scrolling="no"></iframe>
     </aside>
   </section>
 
-  <span id="design" class="position-absolute bottom-0 d-none d-xl-block bg-extra rounded-end-4 z-0"></span>
-
   <!------ CARD PIANTE EXTRA ------>
-  <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
+  <div id="cards">
+    <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
+  </div>
 </main>

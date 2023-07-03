@@ -153,7 +153,7 @@ input:not([type="range"]):active {
 }
 
 .bg-box {
-  background: linear-gradient(180deg, transparent 120px, $company-day 120px);
+  background: linear-gradient(180deg, transparent 96px, $company-day 96px);
 }
 
 .bg-box-extra {
@@ -248,4 +248,35 @@ input:not([type="range"]):active {
 .fit-h {
   aspect-ratio: 1.5/1;
   object-fit: fit;
+}
+
+// ----- HAMBURGER ICON STYLE -----
+.navbar-toggler span {
+  height: 3px;
+  width: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: all 0.35s;
+  transform-origin: center;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+  transform: translateY(0) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+  opacity: 1;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
 }

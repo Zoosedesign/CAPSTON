@@ -1,3 +1,5 @@
+@import "/src/style/colors.scss";
+
 #details #product {
   background-size: cover;
   min-height: 300px;
@@ -13,25 +15,23 @@
 }
 
 @media screen and (min-width: 1200px) {
+  #details {
+    background: transparent;
+  }
+
+  #details #features * {
+    color: $company-day !important;
+  }
+
+  #details #features {
+    background: $company-300;
+  }
+
   #details iframe {
     height: 19.5vw;
   }
-}
 
-#details #design {
-  height: calc(100% - 85vh);
-  width: 66%;
-  transform: skewX(30deg)
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1250px) {
-  #details #design {
-    max-height: 630px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  #details #design {
-    width: 63%;
+  #details #cards {
+    margin-top: -80px;
   }
 }
