@@ -1,30 +1,13 @@
-#home .circle-wrap {
-  --s: calc(225px + 9vw);  /*Size of the circle */
-  --p: 15px;   /* padding */
+@media screen and (min-width: 1351px) {
+  #home .circle-wrap {
+    --s: calc(280px + 9vw);
+    /*Size of the circle */
+    --p: 40.5px;
+    /* padding */
+  }
 
-  height: var(--s);
-  width: var(--s);
-
-  top: 10%;
-}
-
-#home .circle-wrap i,
-#home .circle-wrap::before {
-  content: '';
-  float: left;
-  height:100%;
-  width: 50%;
-  shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), #fff 0);
-}
-
-#home .circle-wrap i {
-  float: right;
-  shape-outside: radial-gradient(farthest-side at left,  transparent calc(100% - var(--p)), #fff 0);
-}
-
-@media screen and (min-width: 1312px) {
   #home .circle-wrap a {
-  display: inline !important;
+    display: inline !important;
   }
 }
 
@@ -38,4 +21,3 @@
     top: -5.32rem;
   }
 }
-

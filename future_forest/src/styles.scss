@@ -7,7 +7,12 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700 !important;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -15,4 +20,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .company-border {
   border: 20px solid $company-100;
+  border-radius: 50%;
+
+}
+
+.circle-wrap {
+  --s: calc(225px + 9vw);
+  /*Size of the circle */
+  --p: 13px;
+  /* padding */
+
+  height: var(--s);
+  width: var(--s);
+
+  top: 10%;
+}
+
+.circle-wrap i,
+.circle-wrap::before {
+  content: '';
+  float: left;
+  height: 100%;
+  width: 50%;
+  shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), #fff 0);
+}
+
+.circle-wrap i {
+  float: right;
+  shape-outside: radial-gradient(farthest-side at left, transparent calc(100% - var(--p)), #fff 0);
 }
