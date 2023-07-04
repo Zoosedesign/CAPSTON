@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-// ----- STILI GENRALI -----
+// ----- STILI GENERALI -----
 * {
   letter-spacing: 1px !important;
   color: $company-300 !important;
@@ -17,10 +17,6 @@ a {
 
 .cursor-zoom {
   cursor: zoom-in;
-}
-
-.collapsing {
-  transition: 0.5s height;
 }
 
 // eliminare bordi al clic, form e imput
@@ -61,7 +57,50 @@ input:not([type="range"]):active {
 .btn.bg-300:hover,
 .btn.bg-extra:hover,
 .btn.bg-night:hover {
-  filter: brightness(80%) !important;
+  background: $company-100 !important;
+  border: 0 !important;
+  transition: all 0.8s;
+  color: $company-300 !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  transition: all 0.8s;
+}
+
+// ----- MENU HAMBURGER STYLE -----
+.collapsing {
+  transition: height 0.5s;
+}
+
+.navbar-toggler span {
+  height: 3px;
+  width: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: all 0.35s;
+  transform-origin: center;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+  transform: translateY(0) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+  opacity: 1;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
 }
 
 // ----- BORDI -----
@@ -248,35 +287,4 @@ input:not([type="range"]):active {
 .fit-h {
   aspect-ratio: 1.5/1;
   object-fit: fit;
-}
-
-// ----- HAMBURGER ICON STYLE -----
-.navbar-toggler span {
-  height: 3px;
-  width: 25px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  transition: all 0.35s;
-  transform-origin: center;
-}
-
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transform: translateY(0) rotate(0deg);
-}
-
-.navbar-toggler span:nth-child(2) {
-  opacity: 1;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(1) {
-  transform: translateY(8px) rotate(-45deg);
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(3) {
-  transform: translateY(-8px) rotate(45deg);
 }
