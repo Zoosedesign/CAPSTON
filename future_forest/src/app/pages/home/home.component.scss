@@ -1,3 +1,10 @@
+.bg-landscape {
+  background: url('/assets/img/who_we_are.png') center bottom no-repeat;
+  background-size: cover;
+  height: 55vh;
+}
+
+
 @media screen and (min-width: 1301px) {
   #home .circle-wrap {
     --s: calc(280px + 9vw);
