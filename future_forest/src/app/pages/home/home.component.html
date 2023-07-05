@@ -1,4 +1,4 @@
-<main id="home">
+<main id="home" class="bg-day">
 
   <section class="position-relative">
     <app-before-after beforeImageUrl="/assets/img/desert.jpg" afterImageUrl="/assets/img/green.jpg"></app-before-after>
@@ -6,27 +6,58 @@
     <article
       class="d-none d-sm-block position-absolute end-50 circle-wrap text-center company-border me-0 me-md-5 mt-3">
       <i></i> <!-- necessari alla classec circle wrap -->
-      <h2>Join Our Green Transition!</h2>
-      <p class="d-none d-md-block mb-0 fs-5">Choose strong plants for a sustainable home garden
+      <h2 class="fs-1">Change the world</h2>
+      <p class="d-none d-md-block fs-5 lh-sm">Choose strong plants for a sustainable home garden
       </p>
       <br>
-      <a routerLink="/xeriscaping" fragment="header" class="d-md-none btn bg-200 text-extra rounded-pill border border-bottom-0 border-5 border-100 px-3 py-2 shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>
+      <a routerLink="/xeriscaping" fragment="header"
+        class="d-md-none btn bg-200 text-extra rounded-pill border border-bottom-0 border-5 border-100 px-md-3 py-md-2 shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>
     </article>
   </section>
 
+  <hr class="mt-5">
 
   <!------ AREE TEMATICHE ------>
-  <section class="vh-100 bg-day pt-5" appScrollSection="mission">
-    <app-our-mission></app-our-mission>
-  </section>
+  <section class="d-flex flex-row flex-wrap px-4 px-lg-5 mt-5 pb-5 text-center text-md-start" appScrollSection="mission">
+    <article class="col-12 col-md-6 p-0 pe-md-4 pe-lg-5">
+      <h3 class="fs-1 m-0">Our Mission <i class="fa-solid fa-arrows-spin"></i></h3>
+      <small class="fs-4">for the right purpose</small>
+      <hr class="mb-5">
+      <p>
+        We believe that tossing <b>100 seeds into a field doesn't mean planting 100 trees</b>. And we think that heavily
+        planting a single species isn't a sustainable and biodiversity-friendly choice. Trees bring benefits to you,
+        your surroundings, and the entire planet. <b>We believe each of us should make an effort to cut down our CO2
+          emissions</b>, and in doing so, we can also help absorb them by planting trees. We reckon we can make this
+        planet greener, and we're determined to do it right. Plus, <b>we only plant drought-resistant plants</b>,
+        reducing CO2 emissions while responsibly preserving water usage.
+      </p>
+    </article>
 
-  <section class="position-relative bg-middle">
+    <article class="col-12 col-md-6 mt-5 mt-md-0 p-0 ps-md-4 ps-lg-5 d-none d-md-block">
+      <h3 class="fs-1 m-0">The right tree <i class="fa-solid fa-earth-americas"></i></h3>
+      <small class="fs-4">in the right place</small>
+      <hr class="mb-5">
+      <p>
+        Planting trees to make them grow, with a long-term perspective.
+        Planting trees is complex work. Not only from <b>a technical point of view skills and resources</b> are needed
+        to create
+        suitable places for small trees to germinate and grow but also, and above all, from a strategic point of view.
+        <b>Planting trees is not enough, they must be supported in their growth</b>. This means thinking in the medium
+        and long
+        term, and for this you need to find the right tree for the right place and the right purpose. The projects we
+        carry out for the planting of our trees respond exactly to these needs.
+      </p>
+    </article>
+  </section><br>
+
+  <section class="position-relative">
     <span id="plant-anchor" appScrollSection="plants" class="position-absolute"></span>
     <app-our-plants></app-our-plants>
   </section>
 
-  <section class="vh-100 bg-extra" appScrollSection="who">
-    <app-who-we-are></app-who-we-are>
+  <section class="vh-100 px-4 px-lg-5" appScrollSection="who">
+
+    <img class="col-12" src="/assets/img/territorio.png" alt="Tuscany landscape image">
   </section>
 
 </main>

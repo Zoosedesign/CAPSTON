@@ -11,6 +11,10 @@ h1 {
   margin: 0;
 }
 
+p {
+  margin-bottom: 0 !important;
+}
+
 a {
   font-weight: 700 !important;
 }
@@ -118,6 +122,10 @@ input:not([type="range"]):active {
 
 .border-300 {
   border-color: $company-300 !important;
+}
+
+.border-300-opacity {
+  border-color: $company-300-opacity !important;
 }
 
 .border-extra {
