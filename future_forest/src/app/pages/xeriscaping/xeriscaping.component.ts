@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlantsService } from 'src/app/services/plants.service';
 
 @Component({
   selector: 'app-xeriscaping',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class XeriscapingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private PlantsSrv: PlantsService) { }
 
   ngOnInit(): void {
+    this.PlantsSrv.imgZoom('garden');
   }
-
 }
