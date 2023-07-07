@@ -259,8 +259,10 @@ input:not([type="range"]):active {
   color: $company-night !important;
 }
 
-.text-justify {
-  text-align: justify !important;
+@media screen and (min-width: 576px) {
+  .text-justify {
+    text-align: justify !important;
+  }
 }
 
 // testo grande con grandezza minima (20vw) e massima (10rem)

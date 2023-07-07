@@ -3,6 +3,12 @@
   background-size: cover;
 }
 
+#xeriscaping .bg-garden {
+  background: url('/assets/img/garden.png') top center;
+  background-size: cover;
+  height: 55vh;
+}
+
 #xeriscaping #garden .circle-wrap {
   --s: calc(350px);
   top: calc(37.5vh - 175px);
