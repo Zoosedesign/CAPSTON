@@ -7,10 +7,19 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./xeriscaping.component.scss']
 })
 export class XeriscapingComponent implements OnInit {
+  plantsPage!: string
 
-  constructor(private PlantsSrv: PlantsService) { }
+  constructor(private PlantsSrv: PlantsService) {
+    this.setPage();
+  }
 
   ngOnInit(): void {
     this.PlantsSrv.imgZoom('garden');
+  }
+
+  //recupero l'ultima pagina visitata per il link al catalogo piante
+  setPage(): void {
+    const actualPage: string | null = localStorage.getItem('actual_page');
+    this.plantsPage = actualPage ? actualPage : '1';
   }
 }

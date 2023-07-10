@@ -4,13 +4,13 @@
     <app-before-after beforeImageUrl="/assets/img/before.jpg" afterImageUrl="/assets/img/after.jpg"></app-before-after>
 
     <article
-      class="d-none d-sm-block position-absolute end-50 circle-wrap text-center company-border me-0 me-md-5 mt-3 bg-extra">
+      class="d-none d-sm-block position-absolute end-50 circle-wrap text-center company-border me-0 me-md-5 mt-3 bg-extra shadow">
       <i></i> <!-- necessari alla classec circle wrap -->
       <h2 class="fs-1">Design our Oasis</h2>
-      <p class="d-none d-md-block fs-5 lh-sm">Beautiful & efficient plants, improve your garden
+      <p class="d-none d-md-block fs-5 lh-sm">Beautiful & strong plants, improve your garden
       </p>
       <br>
-      <a routerLink="/xeriscaping" fragment="header"
+      <a routerLink="/plants/page/{{plantsPage}}" fragment="header"
         class="d-md-none btn bg-200 text-extra rounded-pill border border-bottom-0 border-5 border-100 px-md-3 py-md-2 shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>
     </article>
   </section>
@@ -21,7 +21,8 @@
   <!------ AREA OUR MISSION ------>
   <section class="d-flex flex-row flex-wrap px-4 px-sm-5 mt-5 pb-5 text-center text-md-start">
     <article class="col-12 col-md-6 p-0 pe-md-4 pe-lg-5">
-      <h3 class="fs-1 m-0">Whats <span class="text-nowrap">that? <i class="fa-solid fa-compass-drafting"></i></span></h3>
+      <h3 class="fs-1 m-0">Whats <span class="text-nowrap">that? <i class="fa-solid fa-compass-drafting"></i></span>
+      </h3>
       <small class="fs-4">Philosophy and design.</small>
       <hr class="mb-4 mb-sm-5">
       <p class="text-justify">
@@ -75,8 +76,9 @@
     <article id="our-plants-title" class="position-absolute text-center circle-wrap company-border bg-day shadow">
       <i></i> <!-- necessari alla classec circle wrap -->
       <h3 class="fs-1 text-300">resilient gardening!</h3>
-      <p class="text-300 fs-5 m-0">Create stunning, efficient gardens that save your time. Choose the beauty and
-        convenience of xeriscaping</p>
+      <p class="text-300 fs-5 m-0">Create stunning, efficient gardens that save your time.<span
+          class="d-none d-sm-inline"> Choose the beauty and
+          convenience of xeriscaping</span></p>
     </article>
   </figure>
 
@@ -85,7 +87,8 @@
       <article class="p-4 p-sm-5 mx-4 mx-sm-5 bg-extra rounded-4 text-center text-sm-start">
         <div class="d-flex flex-row">
           <div class="mx-auto mx-sm-0">
-            <h3 class="fs-1 m-0">Climate <span class="text-nowrap">helper <i class="fa-solid fa-earth-americas"></i></span></h3>
+            <h3 class="fs-1 m-0">Climate <span class="text-nowrap">helper <i
+                  class="fa-solid fa-earth-americas"></i></span></h3>
             <small class="fs-4">Greenest Superhero</small>
           </div>
           <img src="/assets/img/future_forest_logo.svg" alt="future forest logo" class="ms-auto d-none d-lg-block"
@@ -93,29 +96,61 @@
         </div>
         <hr class="mb-4 mb-sm-5 mt-lg-0">
         <p class="d-none d-sm-block pb-4 text-justify">
-          Xeriscaping is a powerful approach to <b>combatting climate change and safeguarding our gardens from temperature
-          fluctuations and intensifying heat</b>. By implementing its techniques, we can create resilient and sustainable
+          Xeriscaping is a powerful approach to <b>combatting climate change and safeguarding our gardens from
+            temperature
+            fluctuations and intensifying heat</b>. By implementing its techniques, we can create resilient and
+          sustainable
           landscapes that thrive even in the face of rising temperatures. Through strategic planning and design,
           incorporates shading techniques that provide relief from the scorching sun. <b>By strategically placing trees,
-          arbors, or pergolas in our gardens, we can create cooling microclimates and protect our plants from excessive
-          heat</b>. Xeriscaping not only does it conserve water and reduce our ecological footprint, but it also beautifies
-          our surroundings with an array of vibrant, drought-tolerant plants. <strong>What are you waiting for? take a step
-          towards a greater sustainability!!!</strong></p>
-        <p class="d-none d-sm-block pb-5 text-justify">
+            arbors, or pergolas in our gardens, we can create cooling microclimates and protect our plants from
+            excessive
+            heat</b>. Xeriscaping not only does it conserve water and reduce our ecological footprint, but it also
+          beautifies
+          our surroundings with an array of vibrant, drought-tolerant plants. <strong>What are you waiting for? take a
+            step
+            towards a greater sustainability!!!</strong></p>
+        <p class="d-none d-md-block pb-5 text-justify">
           Another important positivoe addition of these type of gardens, often created with evergreen plants, it's the
           impact can have on the air quality we breathe. <b>These plants have the ability to absorb air pollutants and
-          reduce the presence of harmful substances in the air, helping to combat urban pollution throughout the year</b>.
+            reduce the presence of harmful substances in the air, helping to combat urban pollution throughout the
+            year</b>.
           Additionally, evergreen plants offer an additional benefit as they maintain their green leaves even during dry
           periods, providing a constant supply of oxygen and improving the overall air quality in our vicinity.
         </p>
-        <p class="d-block d-sm-none pb-5 mb-5 text-justify">
-          Implementing xeriscaping techniques in your garden can lead to more sustainable and resilient landscapes. <b>It
-          helps combat climate change, air quality we breathe, safeguards plants from temperature fluctuations</b> and
+        <p class="d-block d-sm-none mb-5 text-justify">
+          Implementing xeriscaping techniques in your garden can lead to more sustainable and resilient landscapes.
+          <b>It
+            helps combat climate change, air quality we breathe, safeguards plants from temperature fluctuations</b> and
           reduces water consumption.
-          Strategic design and shading techniques <b>create cooling microclimates, protecting plants from excessive heat</b>.
+          Strategic design and shading techniques <b>create cooling microclimates, protecting plants from excessive
+            heat</b>.
           Xeriscaping also enhances the beauty of your surroundings with vibrant, drought-tolerant plants. Take a step
           towards greater sustainability by embracing xeriscaping today!
         </p>
+
+        <div class="d-flex flex-row flex-wrap pb-5">
+          <figure class="col-6 col-md-4 col-lg-3 p-3 p-xxl-5">
+            <img class="col-12 rounded-circle" src="/assets/img/pacciamatura.png" alt="cover ground example">
+            <p class="text-center mt-5 fs-5 p-2 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 d-none d-sm-block text-day fw-bold">
+              Surface Mulching</p>
+          </figure>
+          <figure class="col-6 col-md-4 col-lg-3 p-3 p-xxl-5">
+            <p class="text-center mb-5 fs-5 p-2 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 d-none d-sm-block text-day fw-bold">
+              Drought Plants</p>
+            <img class="col-12 rounded-circle" src="/assets/img/plant.png" alt="drought resistant plant example">
+          </figure>
+          <figure class="col-6 col-md-4 col-lg-3 p-3 p-xxl-5">
+            <img class="col-12 rounded-circle" src="/assets/img/gocciolante.png" alt="shadow tree image">
+            <p class="text-center mt-5 fs-5 p-2 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 d-none d-sm-block text-day fw-bold">
+              Subsoil Irrigation</p>
+          </figure>
+          <figure class="col-6 col-md-4 col-lg-3 p-3 p-xxl-5 d-md-none d-lg-block">
+            <p class="text-center mb-5 fs-5 p-2 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 d-none d-sm-block text-day fw-bold">
+              Maximize Shades</p>
+            <img class="col-12 rounded-circle" src="/assets/img/shadow.png" alt="still water example">
+          </figure>
+        </div>
+
         <span class="d-block vh-50"></span>
       </article>
     </div>

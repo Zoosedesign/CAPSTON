@@ -1,55 +1,46 @@
-<div class="d-flex flex-row">
+<div id="our-plants" class="d-flex flex-row">
   <!------ TITLE ------>
   <article id="our-plants-title" class="position-absolute text-center circle-wrap company-border bg-day shadow">
    <i></i>  <!-- necessari alla classec circle wrap -->
-    <h3 class="fs-1 text-300">UNITE TOGETHER!</h3>
-    <p class="text-300 fs-5 m-0">Drought-Defying Plants for a Greener, cheeper and better Future!</p>
-    <br>
+    <h3 class="fs-1 text-300 mb-1">UNITE TOGETHER!</h3>
+    <p class="text-300 fs-5 m-0">Drought<span class="d-none d-sm-inline"> resilient</span> Plants for a Greener<span class="d-none d-sm-inline">, cheeper and better</span> Future!</p>
     <a routerLink="/plants/page/{{plantsPage}}" fragment="header"
-        class="btn bg-200 text-day rounded-pill border border-bottom-0 border-5 border-100 px-md-3 py-md-2 shadow">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>
+        class="btn bg-200 text-day rounded-pill border border-bottom-0 border-5 border-100 px-md-3 py-md-2 shadow mt-2 mt-sm-4">&#62;&nbsp;DISCOVER&nbsp;&#60;</a>
   </article>
 
   <!------ IMAGE ------>
-  <div class="col-4 col-sm-3 col-lg-2 mt-5 d-none d-sm-block">
+  <div class="col-4 col-lg-5 mb-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
       [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i < 13 || i > 15, 'rounded-bottom-3 rounded-bs-0': i === 15 }">
+      [ngClass]="{'d-none': i < 13 || i > 15, 'rounded-top-3 rounded-ts-0': i === 13 }">
     </figure>
   </div>
 
-  <div class="col-4 col-sm-3 col-lg-2 mb-5">
+  <div class="col-5 mt-5 d-none d-lg-block">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
       [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i < 3 || i > 5, 'rounded-top-3': i === 3 }">
+      [ngClass]="{'d-none': i < 3 || i > 5, 'rounded-bottom-3': i === 5 }">
     </figure>
   </div>
 
-  <div class="col-4 col-sm-3 col-lg-2 mt-5">
+  <div class="col-5 mb-5 d-none d-lg-block">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
       [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i < 7 || i > 9, 'rounded-bottom-3': i === 9 }">
+      [ngClass]="{'d-none': i < 7 || i > 9, 'rounded-top-3': i === 7 }">
     </figure>
   </div>
 
-  <div class="col-4 col-sm-3 col-lg-2 mb-5">
+  <div class="col-4 col-lg-5 mt-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
       [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i < 10 || i > 12, 'rounded-top-3': i === 10 }">
+      [ngClass]="{'d-none': i < 10 || i > 12, 'rounded-bottom-3': i === 12 }">
     </figure>
   </div>
 
-  <div class="col-2 mt-5 d-none d-lg-block">
+  <div class="col-4 col-lg-5 mb-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
       [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i >= 3, 'rounded-bottom-3': i === 2 }">
+      [ngClass]="{'d-none': i >= 3, 'rounded-top-3 rounded-te-0': i === 0 }">
     </figure>
   </div>
-
-  <div class="col-2 mb-5 d-none d-lg-block">
-    <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
-      [ngClass]="{'d-none': i < 21, 'rounded-top-3 rounded-te-0': i === 21 }">
-    </figure>
-  </div>
-
 </div>
