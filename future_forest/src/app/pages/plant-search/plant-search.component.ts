@@ -3,8 +3,8 @@ import { Plants } from 'src/app/models/plants.interface';
 
 @Component({
   selector: 'app-plant-search',
-  templateUrl: './plant-search.component.html',
-  styleUrls: ['./plant-search.component.scss']
+  template: `<main><app-cards [plants]="this.plants" [page]="this.page"></app-cards></main>`,
+  styles: ['']
 })
 export class PlantSearchComponent {
   page: number = 0;

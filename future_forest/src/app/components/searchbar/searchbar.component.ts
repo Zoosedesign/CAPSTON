@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.scss']
+  styles: ['']
 })
 export class SearchbarComponent {
   placeholder: string = 'plant name'
@@ -40,10 +40,10 @@ export class SearchbarComponent {
     console.log(this.researchedPlants);
 
     if (this.researchedPlants.length === 0) {
-      this.placeholder = "nessun risultato";
+      this.placeholder = 'nessun risultato';
     } else {
       this.router.navigate(['/plants/search']);
-      localStorage.setItem(`page_0`, JSON.stringify(this.researchedPlants));
+      localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
     }
   }
 }

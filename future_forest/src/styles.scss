@@ -7,6 +7,10 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+main {
+  min-height: calc(100vh - 141px);
+}
+
 h1,
 h2,
 h3,
@@ -45,10 +49,9 @@ h6 {
   border-radius: 50%; /*1*/
   border: 10px solid transparent; /*2*/
   background: linear-gradient($company-200,$company-100) border-box; /*3*/
-  -webkit-mask: /*4*/
+  mask: /*4*/
      linear-gradient(#fff 0 0) padding-box,
      linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; /*5'*/
           mask-composite: exclude; /*5*/
 }
 
