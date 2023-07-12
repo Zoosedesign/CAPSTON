@@ -41,6 +41,10 @@ export class SearchbarComponent {
 
     if (this.researchedPlants.length === 0) {
       this.placeholder = 'nessun risultato';
+      this.searchWord = '';
+      setTimeout(() => {
+        this.placeholder = 'plant name';
+      }, 2000);
     } else {
       this.router.navigate(['/plants/search']);
       localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
