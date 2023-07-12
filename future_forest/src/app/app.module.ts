@@ -21,6 +21,7 @@ import { ScrollSectionDirective } from './services/scroll-section.directive';
 import { BeforeAfterComponent } from './components/before-after/before-after.component';
 import { PlantDetailsComponent } from './pages/plant-details/plant-details.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { PlantSearchComponent } from './pages/plant-search/plant-search.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'plants/:pageNumber/:id',
     component: PlantDetailsComponent
+  },
+  {
+    path: 'plants/search',
+    component: PlantSearchComponent
   },
   {
     path: '**', //per tutte le altre rotte non definite
@@ -62,7 +67,8 @@ const routes: Routes = [
     ScrollSectionDirective,
     BeforeAfterComponent,
     PlantDetailsComponent,
-    CardsComponent
+    CardsComponent,
+    PlantSearchComponent
   ],
   imports: [
     BrowserModule,

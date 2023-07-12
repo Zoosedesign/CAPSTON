@@ -1,19 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Plants } from 'src/app/models/plants.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.scss']
 })
-export class SearchbarComponent implements OnInit {
+export class SearchbarComponent {
+  placeholder: string = 'plant name'
   searchWord!: string;
-  @Input() researchedPlants: Plants[] = [];
+  researchedPlants: Plants[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(private router: Router) { }
 
   search(): void {
     //recupero il termine di ricerca immesso dall'utente
@@ -39,5 +38,12 @@ export class SearchbarComponent implements OnInit {
     );
 
     console.log(this.researchedPlants);
+
+    if (this.researchedPlants.length === 0) {
+      this.placeholder = "nessun risultato";
+    } else {
+      this.router.navigate(['/plants/search']);
+      localStorage.setItem(`page_0`, JSON.stringify(this.researchedPlants));
+    }
   }
 }
