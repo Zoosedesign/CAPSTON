@@ -57,3 +57,8 @@ Nel TS qualora [defaultImage] sia null, o l'immagine sia il placeholder erroneo 
 
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17
+
+# SEARCH --------------------
+Visto che l'API avrebbe eseguito troppe chiamate per fare una ricerca generale, perchè per ogni parola immessa avrebbe recuperato una singola pagina così per come è strutturata, ho dovuto trovare un modo alternativo per recuperare più piante possibili senza effettuare delle chiamate. 
+
+Sono andato quindi a recuperare dalle pagine salvate nel local storage tutte le pagine visitate per unire tutte le piante in un singolo array da filtrare.
