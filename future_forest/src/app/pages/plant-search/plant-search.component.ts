@@ -14,6 +14,7 @@ export class PlantSearchComponent {
     // recupero dati nel localStorage
     const localData: string | null = localStorage.getItem('page_0');
     if (localData) {
-    this.plants = JSON.parse(localData);}
+      this.plants = JSON.parse(localData);
+    }
   }
 }

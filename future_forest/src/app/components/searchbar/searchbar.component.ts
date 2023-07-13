@@ -15,6 +15,12 @@ export class SearchbarComponent {
   constructor(private router: Router) { }
 
   search(): void {
+    // cancello la ricerca precedente se esiste
+    const localData: string | null = localStorage.getItem('page_0');
+    if (localData) {
+      localStorage.removeItem('page_0');
+    }
+
     //recupero il termine di ricerca immesso dall'utente
     const searchValue: string = this.searchWord.toLowerCase().trim();
 
@@ -37,14 +43,15 @@ export class SearchbarComponent {
       plant.scientific_name.flatMap(names => names.toLowerCase().split(' ')).some(word => word.includes(searchValue))
     );
 
-    console.log(this.researchedPlants);
-
     if (this.researchedPlants.length === 0) {
       this.placeholder = 'nessun risultato';
       this.searchWord = '';
       setTimeout(() => {
         this.placeholder = 'plant name';
       }, 2000);
+    } else if (this.router.url === '/plants/search') {
+      localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
+      window.location.reload();
     } else {
       this.router.navigate(['/plants/search']);
       localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
