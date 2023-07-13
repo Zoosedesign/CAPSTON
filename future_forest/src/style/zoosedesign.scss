@@ -19,6 +19,13 @@ a {
   font-weight: 700 !important;
 }
 
+header a:hover,
+header a:hover i,
+footer a:hover,
+footer a:hover i {
+  color: $company-100 !important;
+}
+
 .cursor-zoom {
   cursor: zoom-in;
 }
