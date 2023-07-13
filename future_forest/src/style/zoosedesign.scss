@@ -20,9 +20,9 @@ a {
 }
 
 header a:hover,
-header a:hover i,
+header a:hover *,
 footer a:hover,
-footer a:hover i {
+footer a:hover * {
   color: $company-100 !important;
 }
 
