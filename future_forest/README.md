@@ -1,5 +1,9 @@
 # FUTURE FOREST --------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
+- TYPESCRIPT: only custom algorithm;
+- LIBRARY: nothing;
+- CSS: my personal zoosedesign style + Bootstrap v5.3;
+- IMG: made by me, with Adobe Photoshop.
 
 # ONLY CUSTOM DESIGN --------------------
 Ogni elemento presente, dall'immagine prima e dopo, alla paginazione, ai vari effetti di scroll e zoom sono tutti stati creati senza l'importazione di librerie grafiche esterne oltre al classico CSS di bootstrap, in modo da diminuire la pesantezza della SPA aumentandone allo stesso tempo la reattività.
@@ -37,6 +41,15 @@ I link saranno quindi:
 <routerLink="/" fragment="header" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
 
+# LAZYLOADING --------------------
+Per ottimizzare il caricamento nella pagina delle card ho realizzato un lazy loading che al caricamento della pagina mostra solo le prime 8 piante, cioè le card visualizzate al massimo nelle 100vh.
+
+Le suddette avranno come tag img: <src={{plant.default_image.small_url ? plant.default_image.small_url : plant.default_image.original_url}}>
+Mentre tutte le altre 16 in lazy loading avranno: <attr.data-src={{plant.default_image.small_url ? plant.default_image.small_url : plant.default_image.original_url}}>
+
+In questo modo le ultime 16 non verranno mai caricate con la pagina ma solo dopo uno scroll di 100px che sostituirà [attr.data-src] con [src]
+
+
 # IMAGE PLANT ERROR FILTER --------------------
 Avendo riscontrato problemi, errori, immagini casuali o mancanti all'interno di alcune piante ho implementato la logica filtrando l'array:
 
@@ -62,3 +75,5 @@ Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 
 Visto che l'API avrebbe eseguito troppe chiamate per fare una ricerca generale, perchè per ogni parola immessa avrebbe recuperato una singola pagina così per come è strutturata, ho dovuto trovare un modo alternativo per recuperare più piante possibili senza effettuare delle chiamate. 
 
 Sono andato quindi a recuperare dalle pagine salvate nel local storage tutte le pagine visitate per unire tutte le piante in un singolo array da filtrare. <nel LocalStorage è poi salvato come "page_0">.
+
+Inoltre ragionando sempre con il LocalStorage, la velocità di caricamento sarà sempre superiore ad una get verso l'API.

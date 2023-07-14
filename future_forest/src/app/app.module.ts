@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+// modulo necessario per l'import HostListener nel component card
+import { CommonModule } from '@angular/common';
 
 // area componenti
 import { AppComponent } from './app.component';
@@ -74,6 +76,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    CommonModule,
     RouterModule.forRoot(
       routes, {
         enableTracing: false,
