@@ -43,18 +43,22 @@ export class SearchbarComponent {
       plant.scientific_name.flatMap(names => names.toLowerCase().split(' ')).some(word => word.includes(searchValue))
     );
 
+    // nel caso non ci siano risultati
     if (this.researchedPlants.length === 0) {
+      // do un feedback all'utente
       this.placeholder = 'nessun risultato';
       this.searchWord = '';
       setTimeout(() => {
         this.placeholder = 'plant name';
       }, 2000);
-    } else if (this.router.url === '/plants/search') {
+    } else if (this.router.url === '/plants/search') { // se siamo già sulla pagina di ricerca
       localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
       window.location.reload();
-    } else {
+      this.searchWord = '';
+    } else { // nel caso ci siano risultati in qualsiasi pagina venga fatta la ricerca
       this.router.navigate(['/plants/search']);
       localStorage.setItem('page_0', JSON.stringify(this.researchedPlants));
+      this.searchWord = '';
     }
   }
 }
