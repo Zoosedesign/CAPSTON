@@ -2,8 +2,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 - TYPESCRIPT: only custom algorithm;
 - LIBRARY: nothing;
-- CSS: my personal zoosedesign style + Bootstrap v5.3;
+- SCSS: my personal zoosedesign style + Bootstrap v5.3;
 - IMG: made by me, with Adobe Photoshop.
+
+# LESS IS MORE --------------------
+Ho cercato di ottimizzarlo il più possibile, annullando quasi completamento la ripetizione di codice e componenti, in modo da renderlo più reattivo e meno pesante, anche grazie alla non aggiunta di nessun componente e ragionando il più possibile con il LocalStorage.
 
 # ONLY CUSTOM DESIGN --------------------
 Ogni elemento presente, dall'immagine prima e dopo, alla paginazione, ai vari effetti di scroll e zoom sono tutti stati creati senza l'importazione di librerie grafiche esterne oltre al classico CSS di bootstrap, in modo da diminuire la pesantezza della SPA aumentandone allo stesso tempo la reattività.
