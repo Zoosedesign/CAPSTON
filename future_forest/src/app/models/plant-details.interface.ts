@@ -20,10 +20,5 @@ export interface PlantDetails {
     edible_fruit: boolean,
     leaf_color: string[],
     //----- DESCRIZIONE -----
-    description: string,
-    //----- IMMAGINI -----
-    default_image: {
-      original_url: string,
-      regular_url: string
-    }
+    description: string
 }

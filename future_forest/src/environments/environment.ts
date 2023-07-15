@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  APItoken: 'sk-dHP9649015b2500351329'
+  APItoken: 'sk-nSiB649d9c7d4c4e31432'
 };
 
 /*

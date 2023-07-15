@@ -19,7 +19,9 @@ export class PlantDetailsComponent implements OnInit {
   id!: number;
   page!: number;
   plant!: PlantDetails;
+  plant_image!: string;
   plants!: Plants[];
+
 
   constructor(private route: ActivatedRoute, private PlantsSrv: PlantsService, private sanitizer: DomSanitizer) { }
 
@@ -29,9 +31,11 @@ export class PlantDetailsComponent implements OnInit {
       this.id = Number(params.get('id'));
       this.page = Number(params.get('pageNumber'));
       this.fetchData();
+      this.zoomPlant();
     });
   }
 
+  //----------- RECUPERO DETTAGLI PIANTE --------------
   fetchData(): void {
     // recupero dati nel localStorage
     const localData: string | null = localStorage.getItem(`plant_${this.id}`);
@@ -48,16 +52,19 @@ export class PlantDetailsComponent implements OnInit {
       });
     }
 
-    //----------- PIANTE EXTRA --------------
-    const localPlants: string | null = localStorage.getItem(`page_${this.page}`);
+    const actualPage: string | null = localStorage.getItem(`page_${this.page}`);
+    const pageData: Plants[] = JSON.parse(actualPage!);
 
-    const randomPlants: Plants[] = this.PlantsSrv.shuffleArray<Plants>(JSON.parse(localPlants!)
-      .filter((plant: Plants) => plant.id !== this.id))
+    //----------- IMMAGINE PIANTA --------------
+    const actualPlant: Plants = pageData.find((plant: Plants) => plant.id === this.id)!;
+    this.plant_image = actualPlant.default_image.regular_url || actualPlant.default_image.original_url;
+
+    //----------- PIANTE EXTRA --------------
+    const randomPlants: Plants[] = this.PlantsSrv.shuffleArray<Plants>(pageData)
+      .filter((plant: Plants) => plant.id !== this.id)
       .slice(0, 4);
 
     this.plants = randomPlants;
-
-    this.zoomPlant();
   }
 
   //----------- ZOOM IMMAGINE --------------

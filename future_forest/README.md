@@ -5,8 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - SCSS: my personal zoosedesign style + Bootstrap v5.3;
 - IMG: made by me, with Adobe Photoshop.
 
-# LESS IS MORE --------------------
+
+# LESS IS MORE & BETTER --------------------
 Ho cercato di ottimizzarlo il più possibile, annullando quasi completamento la ripetizione di codice e componenti, in modo da renderlo più reattivo e meno pesante, anche grazie alla non aggiunta di nessun componente e ragionando il più possibile con il LocalStorage.
+
 
 # ONLY CUSTOM DESIGN --------------------
 Ogni elemento presente, dall'immagine prima e dopo, alla paginazione, ai vari effetti di scroll e zoom sono tutti stati creati senza l'importazione di librerie grafiche esterne oltre al classico CSS di bootstrap, in modo da diminuire la pesantezza della SPA aumentandone allo stesso tempo la reattività.
@@ -70,6 +72,11 @@ Nel TS qualora [defaultImage] sia null, o l'immagine sia il placeholder erroneo 
  5. Unisco l'array filtrato con gli eventuali oggetti mancanti.
  <this.plants= slicedData.concat(missingPlants);>
 
+
+# IMG DETTAGLIO PIANTA --------------------
+Non troverete nessuna immagine nella interface del dettaglio pianta, perchè viene recuperata dal local storage, dalla Get precedentemente fatta della pagina del catalogo, che conteneva la pianta su cui si stanno indagando le specifiche.
+
+Il tutto per aumentare la velocità, visto che l'API del dettaglio è già bella corposa di suo.
 
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17
