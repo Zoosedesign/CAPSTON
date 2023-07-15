@@ -37,6 +37,14 @@ export class PlantDetailsComponent implements OnInit {
 
   //----------- RECUPERO DETTAGLI PIANTE --------------
   fetchData(): void {
+    const actualPage: string | null = localStorage.getItem(`page_${this.page}`);
+    const pageData: Plants[] = JSON.parse(actualPage!);
+
+    //----------- IMMAGINE PIANTA --------------
+    const actualPlant: Plants = pageData.find((plant: Plants) => plant.id === this.id)!;
+    this.plant_image = actualPlant.default_image.regular_url || actualPlant.default_image.original_url;
+
+    //----------- DATI PIANTA --------------
     // recupero dati nel localStorage
     const localData: string | null = localStorage.getItem(`plant_${this.id}`);
 
@@ -51,13 +59,6 @@ export class PlantDetailsComponent implements OnInit {
         localStorage.setItem(`plant_${this.id}`, JSON.stringify(this.plant));
       });
     }
-
-    const actualPage: string | null = localStorage.getItem(`page_${this.page}`);
-    const pageData: Plants[] = JSON.parse(actualPage!);
-
-    //----------- IMMAGINE PIANTA --------------
-    const actualPlant: Plants = pageData.find((plant: Plants) => plant.id === this.id)!;
-    this.plant_image = actualPlant.default_image.regular_url || actualPlant.default_image.original_url;
 
     //----------- PIANTE EXTRA --------------
     const randomPlants: Plants[] = this.PlantsSrv.shuffleArray<Plants>(pageData)
