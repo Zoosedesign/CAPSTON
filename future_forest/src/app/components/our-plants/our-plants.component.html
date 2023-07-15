@@ -11,35 +11,35 @@
   <!------ IMAGE ------>
   <div class="col-4 col-lg-5 mb-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
+      [style.background]="'url(' + plant.default_image.small_url + ') center center / cover no-repeat'"
       [ngClass]="{'d-none': i < 13 || i > 15, 'rounded-top-3 rounded-ts-0': i === 13 }">
     </figure>
   </div>
 
   <div class="col-5 mt-5 d-none d-lg-block">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
+      [style.background]="'url(' + plant.default_image.small_url + ') center center / cover no-repeat'"
       [ngClass]="{'d-none': i < 3 || i > 5, 'rounded-bottom-3': i === 5 }">
     </figure>
   </div>
 
   <div class="col-5 mb-5 d-none d-lg-block">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
+      [style.background]="'url(' + plant.default_image.small_url + ') center center / cover no-repeat'"
       [ngClass]="{'d-none': i < 7 || i > 9, 'rounded-top-3': i === 7 }">
     </figure>
   </div>
 
   <div class="col-4 col-lg-5 mt-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
+      [style.background]="'url(' + plant.default_image.small_url + ') center center / cover no-repeat'"
       [ngClass]="{'d-none': i < 10 || i > 12, 'rounded-bottom-3': i === 12 }">
     </figure>
   </div>
 
   <div class="col-4 col-lg-5 mb-5">
     <figure class="m-0" *ngFor="let plant of plants; let i = index"
-      [style.backgroundImage]="'url(' + plant.default_image.small_url + ')'"
+      [style.background]="'url(' + plant.default_image.small_url + ') center center / cover no-repeat'"
       [ngClass]="{'d-none': i >= 3, 'rounded-top-3 rounded-te-0': i === 0 }">
     </figure>
   </div>
