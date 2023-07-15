@@ -1,5 +1,6 @@
 # FUTURE FOREST --------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
+- API: Perenual free, only 300 Request / Day
 - TYPESCRIPT: only custom algorithm;
 - LIBRARY: nothing;
 - SCSS: my personal zoosedesign style + Bootstrap v5.3;
@@ -78,8 +79,10 @@ Non troverete nessuna immagine nella interface del dettaglio pianta, perchè vie
 
 Il tutto per aumentare la velocità, visto che l'API del dettaglio è già bella corposa di suo.
 
+
 # PAGINATION API LIMIT --------------------
 Purtroppo Perenual nella versione FREE blocca la visione dei contenuti a pagina 17
+
 
 # SEARCH --------------------
 Visto che l'API avrebbe eseguito troppe chiamate per fare una ricerca generale, perchè per ogni parola immessa avrebbe recuperato una singola pagina così per come è strutturata, ho dovuto trovare un modo alternativo per recuperare più piante possibili senza effettuare delle chiamate. 
