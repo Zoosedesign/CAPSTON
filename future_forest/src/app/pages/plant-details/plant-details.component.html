@@ -51,9 +51,8 @@
         <p><i class="fa-solid fa-droplet"></i> {{plant.watering || 'unknown'}}</p>
         <p><i class="fa-solid fa-sun"></i>
           {{ plant.sunlight.length > 0 ? plant.sunlight[0] : 'unknown' }}
-          {{ plant.sunlight.length > 1 ? ', ' + plant.sunlight[1].split('/')[1] : '' }}
+          {{ plant.sunlight.length > 1 ? ', ' + plant.sunlight[1] : '' }}
         </p>
-        <p class="d-xl-none d-xxl-inline"><i class="fa-solid fa-house"></i> {{plant.indoor || 'never'}}</p>
         <p class="d-xl-none d-xxl-inline"><i class="fa-solid fa-apple-whole"></i> {{plant.edible_fruit || 'no'}}</p>
         <p class="d-xl-none d-xxl-inline"><i class="fa-solid fa-spa"></i> {{plant.flowers || 'unknown'}}</p>
         <p [ngClass]="{'d-none': plant.leaf_color.length == 0}"><i class="fa-brands fa-envira"></i>

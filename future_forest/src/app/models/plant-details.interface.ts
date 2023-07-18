@@ -14,7 +14,6 @@ export interface PlantDetails {
     sunlight: string[], //full_shade, part_shade, sun-part_shade, full_sun
     maintenance: string, //Low, Medium, High, Average
     growth_rate: string,
-    indoor: boolean,
     care_level: string,
     flowers: boolean,
     edible_fruit: boolean,
