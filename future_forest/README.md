@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - SCSS: my personal zoosedesign style + Bootstrap v5.3;
 - IMG: made by me, with Adobe Photoshop.
 
+# TOKEN --------------------
+Il token è inserito all'interno dell'environment.ts, per cambiarlo basta sovrascriverlo li, per crearne uno nuovo per raggiunto limiti API, andare su: [https://perenual.com/docs/api].
 
 # LESS IS MORE & BETTER --------------------
 Ho cercato di ottimizzarlo il più possibile, annullando quasi completamento la ripetizione di codice e componenti, in modo da renderlo più reattivo e meno pesante, anche grazie alla non aggiunta di nessun componente e ragionando il più possibile con il LocalStorage.
