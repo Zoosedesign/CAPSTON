@@ -16,6 +16,11 @@ export class CardsComponent implements OnInit {
     this.activeLazyLoad();
   }
 
+  //per evitare glitch del lazy loading nel caso di ritorno alla pagina oltre ai 100vh
+  ngAfterViewInit(): void {
+    this.activeLazyLoad();
+  }
+
   //----------- LAZY LOADING --------------
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
