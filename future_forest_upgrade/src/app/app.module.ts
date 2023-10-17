@@ -27,6 +27,7 @@ import { BeforeAfterComponent } from './components/before-after/before-after.com
 import { PlantDetailsComponent } from './pages/plant-details/plant-details.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { PlantSearchComponent } from './pages/plant-search/plant-search.component';
+import { ButtonComponent } from './atoms/button/button.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PlantSearchComponent } from './pages/plant-search/plant-search.componen
     BeforeAfterComponent,
     PlantDetailsComponent,
     CardsComponent,
-    PlantSearchComponent
+    PlantSearchComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
