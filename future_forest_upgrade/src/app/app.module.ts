@@ -1,9 +1,12 @@
 // area moduli
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+//importo il routing
+import { AppRoutingModule } from './app-routing.module';
+
 // modulo necessario per l'import HostListener nel component card
 import { CommonModule } from '@angular/common';
 
@@ -24,35 +27,6 @@ import { BeforeAfterComponent } from './components/before-after/before-after.com
 import { PlantDetailsComponent } from './pages/plant-details/plant-details.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { PlantSearchComponent } from './pages/plant-search/plant-search.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'xeriscaping',
-    component: XeriscapingComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'plants/page/:pageNumber',
-    component: PlantsComponent
-  },
-  {
-    path: 'plants/:pageNumber/:id',
-    component: PlantDetailsComponent
-  },
-  {
-    path: 'plants/search',
-    component: PlantSearchComponent
-  },
-  {
-    path: '**', //per tutte le altre rotte non definite
-    component: HomeComponent,
-    redirectTo: '',
-  }
-];
 
 @NgModule({
   declarations: [
@@ -76,13 +50,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    CommonModule,
-    RouterModule.forRoot(
-      routes, {
-        enableTracing: false,
-        anchorScrolling: 'enabled',
-      }
-    )
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
