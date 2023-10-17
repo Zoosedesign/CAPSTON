@@ -1,0 +1,60 @@
+@import "/src/style/colors.scss";
+
+#details #product {
+  min-height: 300px;
+}
+
+#details #product figure {
+  bottom: -27.5px;
+  left: calc(12.5% - 5px);
+}
+
+#details iframe {
+  height: 39.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #details {
+    background: transparent;
+  }
+
+  #details #features {
+    background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4) !important;
+  }
+
+  #details iframe {
+    height: 19.5vw;
+  }
+
+  #details #cards {
+    margin-top: -6rem;
+  }
+
+  #details section:nth-of-type(1) span:nth-of-type(1) {
+    top: 48px;
+    left: calc(50% - 3rem);
+    width: 6rem;
+    height: 550px;
+  }
+
+  #details span.design:nth-of-type(1) {
+    left: calc(50% - 3rem);
+    width: 6rem;
+    height: 550px;
+  }
+
+  #details span.design:nth-of-type(2) {
+    top: -2.5rem;
+    left: 3rem;
+    width: calc(50% - 3rem);
+    height: 3rem;
+  }
+
+  #details span.design:nth-of-type(3) {
+    top: -1rem;
+    left: 3rem;
+    width: calc(50% - 3rem);
+    height: 3rem;
+    background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4) !important;
+  }
+}

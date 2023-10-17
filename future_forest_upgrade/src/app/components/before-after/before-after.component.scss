@@ -1,0 +1,52 @@
+@import 'src/style/colors.scss';
+
+#before {
+  position: relative;
+  background-size: 100vw min(80vh, 90vw);
+  width: 100vw;
+  height: min(80vh, 90vw);
+}
+
+#after {
+  background-size: 100vw min(80vh, 90vw);
+  width: 67vw;
+  border-right: 5px solid $company-extra;
+  height: min(80vh, 90vw);
+}
+
+#range {
+  position: absolute;
+  bottom: -35px;
+  width: 100vw;
+}
+
+// ----- INPUT DESIGN -----
+//type range
+input[type=range] {
+  appearance: none;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+}
+
+//cursor style
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  height: min(4vw, 17px);
+  width: min(40vw, 166px);
+  border: 0;
+  background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
+  background-size: contain;
+  cursor: ew-resize;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: min(4vw, 17px);
+  width: min(40vw, 166px);
+  border: 0;
+  background: url("/assets/img/before_after_arrow.svg") no-repeat top center;
+  background-size: contain;
+  cursor: ew-resize;
+}
+
+

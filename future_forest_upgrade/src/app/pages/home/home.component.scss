@@ -1,0 +1,29 @@
+.bg-landscape {
+  background: url('/assets/img/who_we_are.png') top center no-repeat;
+  background-size: cover;
+  height: 55vh;
+}
+
+@media screen and (min-width: 1301px) {
+  #home .circle-wrap {
+    --s: calc(280px + 9vw);
+    /*Size of the circle */
+    --p: 40.5px;
+    /* padding */
+  }
+
+  #home .circle-wrap a {
+    display: inline !important;
+  }
+}
+
+//per mettere la sezione a tutto schermo
+#home #plant-anchor {
+  top: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  #home #plant-anchor {
+    top: -5.32rem;
+  }
+}

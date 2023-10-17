@@ -1,0 +1,79 @@
+// per colori e stili personali
+@import './style/colors.scss';
+@import './style/zoosedesign.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Quicksand:wght@400;700&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+main {
+  min-height: calc(100vh - 141px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+.company-border {
+  border: 20px solid $company-100;
+  border-radius: 50%;
+}
+
+.circle-wrap {
+  --s: calc(250px + 9vw);
+  /*Size of the circle */
+  --p: 27px;
+  /* padding */
+
+  height: var(--s);
+  width: var(--s);
+
+  top: 10%;
+}
+
+.circle-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%; /*1*/
+  border: 10px solid transparent; /*2*/
+  background: linear-gradient($company-200,$company-100) border-box; /*3*/
+  mask: /*4*/
+     linear-gradient(#fff 0 0) padding-box,
+     linear-gradient(#fff 0 0);
+          mask-composite: exclude; /*5*/
+}
+
+.circle-wrap i,
+.circle-wrap::before {
+  content: '';
+  float: left;
+  height: 100%;
+  width: 50%;
+  shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), #fff 0);
+}
+
+.circle-wrap i {
+  float: right;
+  shape-outside: radial-gradient(farthest-side at left, transparent calc(100% - var(--p)), #fff 0);
+}
+
+.circle-wrap a {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-jar {
+  background: linear-gradient(90deg, #d5d4c4, $company-day 80px, $company-day calc(100% - 80px), #d5d4c4);
+}

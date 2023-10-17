@@ -1,0 +1,7 @@
+@import '/src/style/colors.scss';
+
+#navbarPage > a:hover {
+  color: $company-100 !important;
+  transform: scale(1.5);
+  transition: all 0.1s;
+}

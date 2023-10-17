@@ -1,0 +1,45 @@
+@import '/src/style/colors.scss';
+
+#xeriscaping #garden {
+  background: url('/assets/img/after_top.jpg') center 30%;
+  background-size: cover;
+}
+
+#xeriscaping .bg-garden {
+  background: url('/assets/img/garden.png') top center;
+  background-size: cover;
+  height: 55vh;
+}
+
+#xeriscaping #garden .circle-wrap {
+  --s: calc(320px);
+  top: calc(37.5vh - 160px);
+  left: calc(50% - 160px);
+}
+
+#xeriscaping figure img {
+  background: linear-gradient(#b6c3db,$company-extra);
+}
+
+@media screen and (min-width: 576px) {
+  #xeriscaping #garden .circle-wrap {
+    --s: calc(450px);
+    --p: 50px;
+    top: calc(37.5vh - 225px);
+    left: calc(50% - 225px);
+  }
+}
+
+// circle wrap slider iniziale
+@media screen and (min-width: 1180px) {
+  #xeriscaping .circle-wrap {
+    --s: calc(280px + 9vw);
+    /*Size of the circle */
+    --p: 40.5px;
+    /* padding */
+  }
+
+  #xeriscaping .circle-wrap a {
+    display: inline !important;
+  }
+}

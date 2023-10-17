@@ -1,0 +1,92 @@
+<main id="details" class="bg-box mb-5">
+  <!------ FOTO PIANTA ------>
+  <section class="d-flex flex-wrap pt-5 px-4 px-sm-5 position-relative">
+    <div class="d-flex px-xl-4 col-12 col-md-6 position-relative">
+      <div id="product" class="rounded-top-4 rounded-bottom-3 cursor-zoom flex-grow-1 z-1 mt-xl-5"
+        [style.background]="'url(' + (this.plant_image) + ') center 30% / cover no-repeat'">
+        <figure
+          class="d-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-75 position-absolute z-1 d-xl-none">
+          <i class="fa-solid fa-sun text-day"></i>
+          <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
+          <i class="fa-solid fa-droplet-slash text-day"></i>
+          <i class="fa-solid fa-hand-holding-droplet text-day"></i>
+        </figure>
+      </div>
+    </div>
+
+    <!------ DETTAGLI PIANTA ------>
+    <article
+      class="d-flex flex-column col-12 col-md-6 pt-0 mt-5 mt-xl-0 pt-md-5 ps-md-5 pe-xl-5 bg-day">
+      <div class="text-center text-md-start mb-4">
+        <h2 class="m-0 fs-1">{{plant.scientific_name}}</h2>
+        <small class="fs-4">{{plant.common_name}}</small>
+        <hr>
+      </div>
+      <p class="mb-5 mb-md-0 text-center text-md-start">{{plant.description}}</p>
+    </article>
+
+    <span class="position-absolute z-n1 bg-day"></span>
+  </section>
+
+  <!------ ICONE PIANTA ------>
+  <section class="d-flex flex-wrap px-4 px-sm-5 position-relative">
+    <div class="col-12 col-xl-6">
+
+      <div class="bg-line d-block d-md-none text-center mb-4">
+        <h3 class="bg-day px-2 px-xl-4 d-inline">FEATURES</h3>
+      </div>
+
+      <div id="features"
+        class="d-flex flex-wrap justify-content-center row-gap-3 column-gap-4 column-gap-xxl-5 rounded-bottom-5 pt-md-5 mt-4 mt-xl-0 pb-2 pb-xl-5 px-0 px-md-4 px-xxl-5 bg-day">
+        <p><i class="fa-solid fa-tree"></i> {{plant.scientific_name[0].split(' ')[0]}}</p>
+        <p><i class="fa-solid fa-location-dot"></i> {{plant.origin[0] || 'unknown'}}</p>
+        <p><i class="fa-solid fa-dna"></i> {{plant.cycle || 'unknown'}}</p>
+        <p><i class="fa-solid fa-arrow-up-wide-short"></i> {{plant.growth_rate || 'unknown'}}</p>
+        <p><i class="fa-solid fa-ruler"></i> {{plant.dimension || 'unknown'}}</p>
+        <p><i class="fa-solid fa-seedling"></i>
+          {{ plant.propagation.length > 0 ? plant.propagation[0].split(' ')[0] : 'unknown' }}
+          {{ plant.propagation.length > 1 ? ', ' + plant.propagation[1].split(' ')[0] : '' }}
+          {{ plant.propagation.length > 2 ? ', ' + plant.propagation[2].split(' ')[0] : '' }}
+        </p>
+        <p><i class="fa-solid fa-droplet"></i> {{plant.watering || 'unknown'}}</p>
+        <p><i class="fa-solid fa-sun"></i>
+          {{ plant.sunlight.length > 0 ? plant.sunlight[0] : 'unknown' }}
+          {{ plant.sunlight.length > 1 ? ', ' + plant.sunlight[1] : '' }}
+        </p>
+        <p class="d-xl-none d-xxl-inline"><i class="fa-solid fa-apple-whole"></i> {{plant.edible_fruit || 'no'}}</p>
+        <p class="d-xl-none d-xxl-inline"><i class="fa-solid fa-spa"></i> {{plant.flowers || 'unknown'}}</p>
+        <p [ngClass]="{'d-none': plant.leaf_color.length == 0}"><i class="fa-brands fa-envira"></i>
+          {{ plant.leaf_color.length > 0 ? plant.leaf_color[0] : 'unknown' }}
+          {{ plant.leaf_color.length > 1 ? ', ' + plant.leaf_color[1] : '' }}</p>
+        <p><i class="fa-solid fa-hand-holding-heart"></i> {{plant.maintenance || plant.care_level || 'unknown'}}</p>
+
+        <figure
+          class="d-none d-xl-flex justify-content-between mb-0 p-3 rounded-pill bg-200 shadow border border-bottom-0 border-100 border-5 w-100 m-4">
+          <i class="fa-solid fa-sun text-day"></i>
+          <i class="fa-solid fa-cloud-sun text-day d-none d-sm-inline"></i>
+          <i class="fa-solid fa-droplet-slash text-day"></i>
+          <i class="fa-solid fa-hand-holding-droplet text-day"></i>
+        </figure>
+      </div>
+    </div>
+
+    <aside class="text-center text-xl-start mt-4 mt-xl-0 pt-xl-4 col-12 col-xl-6 px-xl-5 bg-day">
+      <div class="bg-line mb-4 mb-xl-0">
+        <h3 class="bg-day px-2 ps-xl-0 d-none d-sm-inline m-0">HARDINESS LOCATION MAP</h3>
+        <h3 class="bg-day px-2 d-inline d-sm-none m-0">HABITAT</h3>
+      </div>
+      <!------ CARTINA HABITAT ------>
+      <iframe [src]="getSafeUrl(this.plant.hardiness_location.full_url)" frameborder="0"
+        class="col-12 overflow-hidden px-xxl-5 mt-4 mb-xl-5" scrolling="no"></iframe>
+    </aside>
+
+    <span class="design position-absolute bottom-0 z-n1 bg-day"></span>
+    <span class="design position-absolute z-0 rounded-pill bg-100"></span>
+    <span class="design position-absolute z-n1 bg-day"></span>
+  </section>
+
+  <!------ CARD PIANTE EXTRA ------>
+  <div id="cards">
+    <app-cards [plants]="this.plants" [page]="this.page"></app-cards>
+  </div>
+</main>
